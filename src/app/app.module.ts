@@ -1,3 +1,4 @@
+import { PagesRoutingModule } from './pages/pages.routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -10,7 +11,8 @@ import { LoginComponent } from './pages/login/login.component';
     LoginComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    PagesRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
