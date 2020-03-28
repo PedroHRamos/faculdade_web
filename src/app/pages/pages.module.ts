@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { AlunoPipe } from '../pipes/aluno.pipe';
 import { InputComponent } from '../components/input/input.component';
+import { EstrelasComponent } from '../components/estrelas/estrelas.component'
 
 
 
@@ -10,7 +11,8 @@ import { InputComponent } from '../components/input/input.component';
   declarations: [
     LoginComponent,
     AlunoPipe,
-    InputComponent
+    InputComponent,
+    EstrelasComponent
   ],
   imports: [
     CommonModule
