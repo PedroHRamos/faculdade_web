@@ -1,18 +1,15 @@
+import { EstrelasComponent } from './../components/estrelas/estrelas.component';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
-import { AlunoPipe } from '../pipes/aluno.pipe';
-import { InputComponent } from '../components/input/input.component';
-import { EstrelasComponent } from '../components/estrelas/estrelas.component'
-
-
+import { BarraPesquisaComponent } from '../components/barra-pesquisa/barra-pesquisa.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
-    AlunoPipe,
-    InputComponent,
-    EstrelasComponent
+    EstrelasComponent,
+    BarraPesquisaComponent
   ],
   imports: [
     CommonModule

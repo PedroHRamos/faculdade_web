@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
-// declare var $: any;
 
 @Component({
   selector: 'app-sidebar',
@@ -13,8 +12,6 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
     $(document).ready(function() {
-
-
       $('#sidebarCollapse').on('click', function() {
         $('#sidebar, #content').toggleClass('active');
         $('.collapse.in').toggleClass('in');
