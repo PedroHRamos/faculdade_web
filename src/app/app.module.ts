@@ -7,10 +7,12 @@ import { LoginComponent } from './pages/login/login.component';
 import { AlunoPipe } from './pipes/aluno.pipe';
 import { InputComponent } from './components/input/input.component';
 import { PagesModule } from './pages/pages.module';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

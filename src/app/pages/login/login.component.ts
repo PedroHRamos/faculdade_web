@@ -1,6 +1,7 @@
 import { AlunoDTO } from './../../dto/alunoDTO';
 import { AlunoService } from './../../services/aluno.service';
 import { Component, OnInit, Inject } from '@angular/core';
+import * as $ from 'jquery';
 
 
 @Component({
@@ -10,18 +11,12 @@ import { Component, OnInit, Inject } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+
+
   constructor() {
   }
 
-  aluno: AlunoDTO;
-  luan = 'luan';
-  alunoService: AlunoService;
-
   ngOnInit(): void {
-  }
-
-  teste() {
-
   }
 
 }
