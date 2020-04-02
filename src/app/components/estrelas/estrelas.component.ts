@@ -9,15 +9,15 @@ export class EstrelasComponent implements OnInit {
 
   estrelas: string[]
 
-  public avaliar(estrela: number):void {
-    
-    for(var i=0;i<estrela;i++){
-      this.estrelas[i] = "fas fa-star";
+  public avaliar(estrela: number) {
+
+    for (let i = 0; i < estrela; i++) {
+      this.estrelas[i] = 'fas fa-star';
     }
 
-    if(estrela<5){
-    for(var i=estrela;i<5;i++){
-      this.estrelas[i] = "far fa-star";
+    if (estrela < 5 ) {
+    for (let i = estrela; i < 5; i++) {
+      this.estrelas[i] = 'far fa-star';
     }
   }
 
@@ -27,11 +27,11 @@ export class EstrelasComponent implements OnInit {
 
     this.estrelas = new Array();
 
-    this.estrelas[0] = "far fa-star";
-    this.estrelas[1] = "far fa-star";
-    this.estrelas[2] = "far fa-star";
-    this.estrelas[3] = "far fa-star";
-    this.estrelas[4] = "far fa-star";
+    this.estrelas[0] = 'far fa-star';
+    this.estrelas[1] = 'far fa-star';
+    this.estrelas[2] = 'far fa-star';
+    this.estrelas[3] = 'far fa-star';
+    this.estrelas[4] = 'far fa-star';
 
    }
 
