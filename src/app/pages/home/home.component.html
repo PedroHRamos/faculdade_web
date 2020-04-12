@@ -1,1 +1,56 @@
-<p>home works!</p>
+<div class="background-image">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" 
+            data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" 
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav container" id="itens">
+            <li class="nav-item active">
+                <a routerLink="/home" class="nav-link">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a routerLink="/rank" href="/rank" class="nav-link">Rank</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#"><i class="fas fa-glasses"></i>
+            </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Contato</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Sobre nós</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a routerLink="/login" class="nav-link">Login</a>
+                <!-- <i class="fas fa-user"></i> -->
+            </li>
+        </ul>
+        </div>
+    </nav>
+
+    <div id="page-content">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-md-7">
+                    <h1 class="font-weight-light mt-4 text-white">Glasses</h1>
+                    <p class="lead text-white">Avaliação de universidades de alunos para alunos</p>
+                </div>
+            </div>
+            <div class="form-group row align-items-center justify-content-center">
+                <label class="text-white">Pesquise alguma faculdade</label>
+                <input type="text" class="form-control">
+            </div>
+        </div>
+    </div>
+
+    <footer id="sticky-footer" class="py-4 bg-primary text-white-50">
+        <div class="container text-center">
+            <small>Copyright &copy; Glasses</small>
+        </div>
+    </footer>
+</div>

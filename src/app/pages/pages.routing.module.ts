@@ -1,3 +1,4 @@
+import { RankComponent } from './rank/rank.component';
 import { MenuComponent } from './menu/menu.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
@@ -6,9 +7,11 @@ import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
-    // { path: '', redirectTo: 'first-page', pathMatch: 'full'},
+    { path: '', redirectTo: 'home', pathMatch: 'full'},
     { path: 'login', component: LoginComponent },
-    { path: 'menu', component: MenuComponent}
+    { path: 'menu', component: MenuComponent},
+    { path: 'home', component: HomeComponent },
+    { path: 'rank', component: RankComponent }
     // { path: 'menu', component: MenuComponent,
     //   children: [
     //     {

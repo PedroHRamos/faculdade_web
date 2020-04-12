@@ -1,3 +1,4 @@
+import { RankComponent } from './rank/rank.component';
 import { EstrelasComponent } from './../components/estrelas/estrelas.component';
 
 import { NgModule } from '@angular/core';
@@ -14,6 +15,7 @@ import { SidebarComponent } from '../components/sidebar/sidebar.component';
     // EstrelasComponent,
     // BarraPesquisaComponent,
     MenuComponent,
+    RankComponent
   ],
   imports: [
     CommonModule,

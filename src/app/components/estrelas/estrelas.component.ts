@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EstrelasComponent implements OnInit {
 
-  estrelas: string[]
+  estrelas: string[];
 
   public avaliar(estrela: number) {
 

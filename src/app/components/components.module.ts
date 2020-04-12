@@ -17,6 +17,7 @@ import { EstrelasComponent } from './estrelas/estrelas.component';
   exports: [
     SidebarComponent,
     BarraPesquisaComponent,
-    EstrelasComponent]
+    EstrelasComponent
+  ]
 })
 export class ComponentsModule {}

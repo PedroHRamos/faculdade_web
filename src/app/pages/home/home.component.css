@@ -1,0 +1,43 @@
+small{
+    color: #fff;
+}
+
+input{
+    width: 60%;
+}
+
+.fa-glasses{
+    font-size: 1.5rem;
+}
+
+.background-image{
+    background-image: url('../../../assets/img/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.pb-4, .py-4{
+    padding-bottom: 1rem!important;
+}
+
+.pt-4, .py-4{
+    padding-top: 1rem!important;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+
+#itens{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
