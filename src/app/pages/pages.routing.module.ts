@@ -1,3 +1,4 @@
+import { DetalheFaculComponent } from './detalhe-facul/detalhe-facul.component';
 import { RankComponent } from './rank/rank.component';
 import { MenuComponent } from './menu/menu.component';
 import { LoginComponent } from './login/login.component';
@@ -11,7 +12,8 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'menu', component: MenuComponent},
     { path: 'home', component: HomeComponent },
-    { path: 'rank', component: RankComponent }
+    { path: 'rank', component: RankComponent },
+    { path: 'detalhe-faculdade', component: DetalheFaculComponent }
     // { path: 'menu', component: MenuComponent,
     //   children: [
     //     {
@@ -31,6 +33,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  declarations: [HomeComponent]
+  declarations: []
 })
 export class PagesRoutingModule { }

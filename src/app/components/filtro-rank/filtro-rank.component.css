@@ -1,0 +1,17 @@
+.card-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-link {
+    color: #0056b3 !important;
+    text-decoration: none !important;
+}
+
+.fa-angle-double-down {
+    font-size: 1.5rem;
+}
+
+.label-head {
+    font-weight: bolder;
+}

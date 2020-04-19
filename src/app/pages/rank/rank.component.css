@@ -2,3 +2,14 @@
     max-width: 20%;
     max-height: 10%;
 }
+
+.noBorderBottom {
+    vertical-align: unset;
+    border-bottom: none;
+}
+
+.hover-link:hover {
+    background-color: #3A99FC;
+    color: #fff;
+    cursor: pointer;
+}

@@ -13,8 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
-    PagesRoutingModule,
     PagesModule,
+    PagesRoutingModule,
     BrowserAnimationsModule,
     ComponentsModule
   ],

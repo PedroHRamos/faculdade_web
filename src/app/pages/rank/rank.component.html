@@ -1,5 +1,32 @@
+<app-navbar></app-navbar>
+
 <div class="container">
+    <app-filtro-rank></app-filtro-rank>
     <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Rank</th>
+                        <th scope="col">Avaliação geral média</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Professores</th>
+                        <th scope="col">Infraestrutura</th>
+                        <th scope="col">Cordenação</th>
+                    </tr>
+                    <tr routerLink="/detalhe-faculdade" routerLinkActive="active" class="hover-link">
+                        <th scope="row" class="noBorderBottom">8</th>
+                        <td><label>2</label><span class="badge badge-pill badge-danger">Ruim</span></td>
+                        <td>Centro Universitário Una</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <!-- <div class="row">
         <div class="col-6">
             <div class="row">
                 <div>
@@ -64,5 +91,5 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>

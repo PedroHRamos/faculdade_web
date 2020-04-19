@@ -4,12 +4,18 @@ import { CommonModule } from '@angular/common';
 import { BarraPesquisaComponent } from '../components/barra-pesquisa/barra-pesquisa.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { EstrelasComponent } from './estrelas/estrelas.component';
+import { FiltroRankComponent } from './filtro-rank/filtro-rank.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FiltroAvaliacoesComponent } from './filtro-avaliacoes/filtro-avaliacoes.component';
 
 @NgModule({
   declarations: [
     EstrelasComponent,
     BarraPesquisaComponent,
-    SidebarComponent
+    SidebarComponent,
+    FiltroRankComponent,
+    NavbarComponent,
+    FiltroAvaliacoesComponent
   ],
   imports: [
     CommonModule
@@ -17,7 +23,10 @@ import { EstrelasComponent } from './estrelas/estrelas.component';
   exports: [
     SidebarComponent,
     BarraPesquisaComponent,
-    EstrelasComponent
+    EstrelasComponent,
+    FiltroRankComponent,
+    NavbarComponent,
+    FiltroAvaliacoesComponent
   ]
 })
 export class ComponentsModule {}
