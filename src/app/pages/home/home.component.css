@@ -6,6 +6,38 @@ input{
     width: 60%;
 }
 
+#page-content {
+    flex: 1 0 auto;
+}
+
+#sticky-footer {
+    flex-shrink: none;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+#search-input {
+    margin-right: 0px;
+}
+
+.align-middle {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+}
+
+.label-center {
+    display: block;
+    text-align: center;
+}
+
+.margin-input {
+    /* margin: auto; */
+    /* width: 60%; */
+    width: 100%;
+}
+
 .background-image{
     background-image: url('../../../assets/img/background.jpg');
     background-repeat: no-repeat;
@@ -21,15 +53,20 @@ input{
     padding-top: 1rem!important;
 }
 
-#page-content {
-  flex: 1 0 auto;
+.display-inline {
+    display: inline-flex;
 }
 
-#sticky-footer {
-  flex-shrink: none;
-  bottom: 0;
-  position: absolute;
-  width: 100%;
+.col-10 {
+    padding-left: 0px;
+    padding-right: 0px;
 }
+
+.col-2 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
 
 
