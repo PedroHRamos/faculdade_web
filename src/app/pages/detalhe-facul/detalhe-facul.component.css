@@ -7,14 +7,42 @@
 
 .flex{
     display: flex;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .branco{
     background-color: #FFFFFF;
 }
 
-div p{
-    color: #FFFFFF;
-    margin-top: -0.25rem;
-    margin-bottom: 0.6rem;
+.fa-graduation-cap{
+    color: #007bff !important;
+}
+
+.separador-direita{
+    border-right: solid 1px #007bff;
+}
+
+.separador-esquerda{
+    border-left: solid 1px #007bff;
+}
+
+.separador-superior{
+    border-top: solid 1px #007bff;
+}
+
+.separador-inferior{
+    border-bottom: solid 1px #007bff;
+}
+
+.fa-user-circle{
+    color: #007bff !important;
+}
+
+.fa-user-graduate{
+    color: #007bff !important;
+}
+
+.fa-comment{
+    color: #007bff !important;
 }

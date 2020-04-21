@@ -3,88 +3,79 @@
 <!-- <div class="background-image">
     teste
 </div> -->
+<div class="container">
 <div class="branco">
-  <div class="container">
-      <div class="row">
-          <div class="col-3">
-              <h2><img class="image" src="../../../assets/img/UnaBarreiro.jpg" alt=""></h2>
-          </div>
-          <div class="col-7">
-            <h2 class="">Una - Campus Barreiro</h2>
-            <h5 class="flex mt-1">Avaliação Geral: <app-estrelas class="estrelas ml-2"></app-estrelas>  </h5>
-        </div>
-        <div class="col-2 text-right">
-            <button class="btn btn-primary">Avaliar</button>
-        </div>
-      </div> 
-  </div>
+  <div class="row mt-3">
+      <div class="col-3">
+          <h2><img class="image" src="../../../assets/img/UnaBarreiro.jpg" alt=""></h2>
+      </div>
+      <div class="col-7">
+        <h2 class="">Una - Campus Barreiro</h2>
+        <h5 class="flex mt-1">Avaliação Geral: <app-estrelas class="estrelas ml-2"></app-estrelas>  </h5>
+    </div>
+    <div class="col-2 text-right">
+        <button class="btn btn-primary">Avaliar</button>
+    </div>
+  </div> 
 </div>
 
-<br>
-<div class="bg-primary text-color text-light">
-  <div class="container">
-      <div class="row">
-          
-        <div class="col-3 display-2 mt-5 mb-5 text-center">
-          <i class="fas fa-graduation-cap"></i>
-        </div>
+<div class="mt-4">
+  <div class="row">
+      
+    <div class="col-3 display-3 separador-direita my-2 text-center">
+      <i class="fas fa-graduation-cap"></i>
+    </div>
 
-        <div class="col-2 mt-4 mb-4 text-right">
-          <p class="flex">Estrutura:</p>
-          <p class="flex">Professores:</p>
-          <p class="flex">Financeiro:</p>
-          <p class="flex">Atendimento:</p>
-          <p class="flex">Coordenação:</p>
-          <p class="flex">Ambiente virtual:</p>
-        </div>
+    <div class="col-4 pl-1">
+      <pre class="flex"><app-estrelas class="ml-3"></app-estrelas>  Estrutura</pre>
+      <pre class="flex"><app-estrelas class="ml-3"></app-estrelas>  Professores</pre>
+      <pre class="flex"><app-estrelas class="ml-3"></app-estrelas>  Financeiro</pre>
+    </div>
 
-        <div class="col-7 mt-4 mb-4 text-right">
-          <p class="flex"><app-estrelas-brancas class="ml-3"></app-estrelas-brancas></p>
-          <p class="flex"><app-estrelas-brancas class="ml-3"></app-estrelas-brancas></p>
-          <p class="flex"><app-estrelas-brancas class="ml-3"></app-estrelas-brancas></p>
-          <p class="flex"><app-estrelas-brancas class="ml-3"></app-estrelas-brancas></p>
-          <p class="flex"><app-estrelas-brancas class="ml-3"></app-estrelas-brancas></p>
-          <p class="flex"><app-estrelas-brancas class="ml-3"></app-estrelas-brancas></p>
-        </div>
-          
-      </div>
+    <div class="col-5 pl-1">
+      <pre class="flex"><app-estrelas class="ml-3"></app-estrelas>  Atendimento</pre>
+      <pre class="flex"><app-estrelas class="ml-3"></app-estrelas>  Coordenação</pre>
+      <pre class="flex"><app-estrelas class="ml-3"></app-estrelas>  Ambiente virtual</pre>
     </div>
   </div>
+  </div>
 
-
-
-      <div class="row">
-          <h2>Avaliações dos alunos</h2>
-          <div class="col">
+  <div class="mt-4">
+    <div class="row">
+      <div class="col-3 text-center">
+        
+      </div>
+      <div class="col-8 mt-2">
+        <h2 class="text-right">Avaliações dos alunos</h2>
+      </div>
+      <div class="col-1">
+        <i class="fa fa-comment display-4"></i>
+      </div>
+    </div>
+    
+      <div class="row mt-2">
+          <div class="col-12">
               <div class="card">
-                  <div class="card-header">
-                    Featured
+
+                  <div class="row card-header m-1 p-1">
+                    <div class="col-1">
+                      <i class="fa fa-user-circle display-4"></i>
+                    </div>
+                    <div class="col-8">
+                        <h3> Maria Josefina</h3>
+                        <pre><i class="fas fa-user-graduate"></i> Estudante de Sistemas de Informação</pre>
+                    </div>
+                    <div class="col-3">
+                      <pre class="flex text-right"><app-estrelas class="ml-3"></app-estrelas>  Geral</pre>
                   </div>
+                  </div>
+
                   <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
+                    <h5 class="card-title">Melhoria para atendimento aos estudantes </h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                    </div>
                 </div>
           </div>
+        </div>
       </div>
-      <div class="row">
-          <h2>Avaliações dos alunos</h2>
-          <div class="col">
-              <app-filtro-avaliacoes></app-filtro-avaliacoes>
-          </div>
-          <div class="col">
-              <!-- Avaliações gerais -->
-              <div class="card">
-                  <div class="card-header">
-                    Featured
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-              </div>
-          </div>
-      </div>
-  
+</div>
