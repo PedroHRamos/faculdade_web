@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { RankComponent } from './rank/rank.component';
 import { PagesRoutingModule } from './pages.routing.module';
 import { QuestionarioComponent } from './questionario/questionario.component';
+import { ContatoComponent } from './contato/contato.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { QuestionarioComponent } from './questionario/questionario.component';
     RankComponent,
     DetalheFaculComponent,
     QuestionarioComponent
+    ContatoComponent,
+    SobreNosComponent
   ],
   imports: [
     CommonModule,
