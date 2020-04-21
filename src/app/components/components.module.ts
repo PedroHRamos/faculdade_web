@@ -7,6 +7,7 @@ import { EstrelasComponent } from './estrelas/estrelas.component';
 import { FiltroRankComponent } from './filtro-rank/filtro-rank.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FiltroAvaliacoesComponent } from './filtro-avaliacoes/filtro-avaliacoes.component';
+import { EstrelasBrancasComponent } from './estrelas-brancas/estrelas-brancas.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FiltroAvaliacoesComponent } from './filtro-avaliacoes/filtro-avaliacoes
     SidebarComponent,
     FiltroRankComponent,
     NavbarComponent,
-    FiltroAvaliacoesComponent
+    FiltroAvaliacoesComponent,
+    EstrelasBrancasComponent
   ],
   imports: [
     CommonModule
@@ -26,7 +28,8 @@ import { FiltroAvaliacoesComponent } from './filtro-avaliacoes/filtro-avaliacoes
     EstrelasComponent,
     FiltroRankComponent,
     NavbarComponent,
-    FiltroAvaliacoesComponent
+    FiltroAvaliacoesComponent,
+    EstrelasBrancasComponent
   ]
 })
 export class ComponentsModule {}
