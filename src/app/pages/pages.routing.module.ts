@@ -20,6 +20,7 @@ const routes: Routes = [
     { path: 'contato', component: ContatoComponent },
     { path: 'sobre-nos', component: SobreNosComponent },
     { path: 'questionario', component: QuestionarioComponent }
+    { path: 'detalhe-faculdade', component: DetalheFaculComponent }
     // { path: 'menu', component: MenuComponent,
     //   children: [
     //     {
