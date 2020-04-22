@@ -19,11 +19,9 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
     MenuComponent,
     RankComponent,
     DetalheFaculComponent,
-    DetalheFaculComponent
-    DetalheFaculComponent,
-    QuestionarioComponent
+    QuestionarioComponent,
     ContatoComponent,
-    SobreNosComponent
+    SobreNosComponent,
   ],
   imports: [
     CommonModule,
