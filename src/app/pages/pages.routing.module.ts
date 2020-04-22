@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { QuestionarioComponent } from './questionario/questionario.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
     { path: 'menu', component: MenuComponent},
     { path: 'home', component: HomeComponent },
     { path: 'rank', component: RankComponent },
-    { path: 'detalhe-faculdade', component: DetalheFaculComponent }
+    { path: 'detalhe-faculdade', component: DetalheFaculComponent },
+    { path: 'questionario', component: QuestionarioComponent }
     // { path: 'menu', component: MenuComponent,
     //   children: [
     //     {
