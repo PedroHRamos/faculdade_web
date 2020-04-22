@@ -1,0 +1,98 @@
+.backgroudcontato {
+    background-image: url('src\assets\img\fundocontato.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.corfundo {
+    background-color: rgba(255, 255, 255, 0.295);
+    height: 100%;
+}
+
+.btn-facebook {
+    color: #fff;
+    background-color: #3b5998;
+    border-color: rgba(0,0,0,0.2);
+}
+
+.btn-twitter{
+    color: #fff;
+    background-color: #55ACEE;
+    border-color: rgba(0,0,0,0.2);
+}
+
+.btn-discord{
+    color: #fff;
+    background-color: #7289da;
+    border-color: rgba(0,0,0,0.2);
+
+}
+.btn-social-icon {
+    position: relative;
+    padding-left: 44px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    margin-bottom: 4px;
+    margin-left: 15px;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 10px;
+    margin-bottom: 0;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.card {
+    width: 35rem;
+    margin: auto;
+    border-radius: 17px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-title {
+    font-size: 24px;
+}
+
+.form-group {
+    font-size: 15px;
+}
+
+.form-control {
+    font-size: 14px;
+}
+
+.btn.btn-primary {
+    font-size: 14px;
+    margin-left: 87%;
+}
+
+.psocial {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.iconssocial {
+    margin: auto;
+    width: 50%;
+}

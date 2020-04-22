@@ -18,6 +18,7 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
     LoginComponent,
     MenuComponent,
     RankComponent,
+    DetalheFaculComponent,
     DetalheFaculComponent
     DetalheFaculComponent,
     QuestionarioComponent

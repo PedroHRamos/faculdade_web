@@ -18,6 +18,7 @@ const routes: Routes = [
     { path: 'rank', component: RankComponent },
     { path: 'detalhe-faculdade', component: DetalheFaculComponent },
     { path: 'contato', component: ContatoComponent },
+    { path: 'sobre-nos', component: SobreNosComponent}
     { path: 'sobre-nos', component: SobreNosComponent },
     { path: 'questionario', component: QuestionarioComponent }
     { path: 'detalhe-faculdade', component: DetalheFaculComponent }
