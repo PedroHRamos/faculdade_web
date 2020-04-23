@@ -1,0 +1,38 @@
+.fa{
+    color: #007bff !important;
+    font-size: 2rem;
+}
+
+.far{
+    color: #007bff !important;
+    font-size: 2rem;
+}
+
+.fa-glasses{
+    font-size: 4rem !important;
+}
+
+.fas{
+    color: #007bff !important;
+    font-size: 2rem;
+}
+
+.flex{
+    margin-top: -1rem;
+}
+
+.ml-5{
+    margin-left: 5rem !important;
+}
+
+.girar-direita {
+    transform: rotate(30deg);
+}
+
+.girar-esquerda {
+    transform: rotate(-30deg);
+}
+
+.branco{
+    color: #FFFFFF !important;
+}
