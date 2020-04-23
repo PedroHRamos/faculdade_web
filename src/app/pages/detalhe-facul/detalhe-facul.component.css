@@ -46,3 +46,23 @@
 .fa-comment{
     color: #007bff !important;
 }
+
+.fa-star{
+    color: #007bff !important;
+}
+
+@media (max-width: 767px) 
+{
+  h2.text-right{
+      text-align: center !important;
+  }
+  h2{
+      font-size: 1.5rem;
+  }
+  h3{
+      font-size: 1.1rem;
+  }
+  .avaliacao{
+      text-align: center !important;
+  }
+}

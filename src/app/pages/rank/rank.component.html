@@ -3,7 +3,7 @@
 <div class="container">
     <app-filtro-rank></app-filtro-rank>
     <div class="row">
-        <div class="col">
+        <div class="d-none d-md-block">
             <table class="table">
                 <thead>
                     <tr>
@@ -15,7 +15,7 @@
                         <th scope="col">Cordenação</th>
                     </tr>
                     <tr routerLink="/detalhe-faculdade" routerLinkActive="active" class="hover-link">
-                        <th scope="row" class="noBorderBottom">8</th>
+                        <td scope="row d-none d-md-block" class="noBorderBottom">8</td>
                         <td><label>2</label><span class="badge badge-pill badge-danger">Ruim</span></td>
                         <td>Centro Universitário Una</td>
                         <td>4</td>
@@ -25,6 +25,22 @@
                 </thead>
             </table>
         </div>
+
+        <div class="col d-block d-md-none">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Avaliação média</th>
+                        <th scope="col">Nome</th>
+                    </tr>
+                    <tr routerLink="/detalhe-faculdade" routerLinkActive="active" class="hover-link">
+                        <td><label>2</label><span class="badge badge-pill badge-danger">Ruim</span></td>
+                        <td>Centro Universitário Una</td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
     </div>
     <!-- <div class="row">
         <div class="col-6">
