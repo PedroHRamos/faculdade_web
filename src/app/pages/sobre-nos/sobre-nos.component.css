@@ -1,0 +1,40 @@
+.backgroundsobre {
+
+    background-image: url('src\assets\img\fundosobre.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.fas.fa-glasses {
+    font-size: 100px;
+    color: #007bff;
+    padding: 20pt;
+}
+
+.espaco {
+    padding-bottom: 30pt;
+}
+
+.container {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 35pt;
+    padding-top: 10pt;
+    padding-bottom: 10pt;
+}
+
+.card-text {
+    font-size: 14pt;
+}
+
+.card-title:nth-child(5) {
+    font-size: 20pt;
+    padding: 20pt;
+}
+
+.titulocartao {
+    font-size: 20pt;
+}
