@@ -70,6 +70,12 @@
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
+@media screen and (max-width: 600px) {
+    .card {
+        width: auto;
+    }
+  }
+
 .card-title {
     font-size: 24px;
 }
@@ -84,7 +90,6 @@
 
 .btn.btn-primary {
     font-size: 14px;
-    margin-left: 87%;
 }
 
 .psocial {
@@ -96,3 +101,31 @@
     margin: auto;
     width: 50%;
 }
+
+#sticky-footer {
+    flex-shrink: none;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .iconssocial {
+        width: auto;
+    }
+
+    #sticky-footer {
+        flex-shrink: none;
+        bottom: 0;
+        position: relative;
+        width: 100%;
+    }
+
+    .backgroudcontato {
+        height: auto;
+    }
+
+    .btn-social-icon {
+        margin-left: 30px;
+    }
+  }
