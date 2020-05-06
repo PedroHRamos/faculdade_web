@@ -1,4 +1,5 @@
-export class AlunoDTO{
-    Nome: string;
-    Idade: Int16Array ;
+export class AlunoDTO {
+    Instituicao: number;
+    Curso: number;
+    Usuario: number;
 }

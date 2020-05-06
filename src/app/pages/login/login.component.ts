@@ -13,10 +13,11 @@ export class LoginComponent implements OnInit {
 
 
 
-  constructor() {
+  constructor(private alunoService: AlunoService) {
   }
 
   ngOnInit(): void {
+    this.alunoService.CadastrarAluno().subscribe(res => console.log(res));
   }
 
 }
