@@ -12,7 +12,10 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class LoginComponent implements OnInit {
 
+  onSubmit(form){
+    console.log(form);
 
+  }
 
   constructor(private usuarioService: UsuarioService) {
   }

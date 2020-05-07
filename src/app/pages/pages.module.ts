@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
@@ -26,7 +27,8 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
   imports: [
     CommonModule,
     ComponentsModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    FormsModule,
   ]
 })
 export class PagesModule { }
