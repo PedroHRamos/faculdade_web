@@ -2,6 +2,7 @@ import { AlunoDTO } from './../../dto/alunoDTO';
 import { AlunoService } from './../../services/aluno.service';
 import { Component, OnInit, Inject } from '@angular/core';
 import * as $ from 'jquery';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 
 @Component({
@@ -13,11 +14,11 @@ export class LoginComponent implements OnInit {
 
 
 
-  constructor(private alunoService: AlunoService) {
+  constructor(private usuarioService: UsuarioService) {
   }
 
   ngOnInit(): void {
-    this.alunoService.CadastrarAluno().subscribe(res => console.log(res));
+    this.usuarioService.CadastrarUsuario().subscribe(res => console.log(res));
   }
 
 }
