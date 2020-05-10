@@ -1,8 +1,11 @@
+import { FormsModule } from '@angular/forms';
 import { AlunoService } from './services/aluno.service';
 import { ComponentsModule } from './components/components.module';
 import { PagesRoutingModule } from './pages/pages.routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
+
 
 import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
@@ -15,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     PagesModule,
     PagesRoutingModule,
     BrowserAnimationsModule,

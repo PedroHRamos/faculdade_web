@@ -40,31 +40,30 @@
                 <i class="fas fa-glasses icone-meio"></i>
             </div>
             <h3>Faça sua conta</h3>
-            <form #dados="ngForm" (ngSubmit)="onSubmit(dados)">
+            <form #dados="ngForm" onsubmit="cadastrarDados()" id="dados">
                 <div class="form-group">
                     <label for="email"></label>
-                    <input type="email" class="form-control" id="email" placeholder="meuemail@gmail.com" name="email" ngModel/>
+                    <input type="email" class="form-control" id="email" maxlength="32" placeholder="meuemail@gmail.com" name="email" ngModel/>
                 </div>
                 <div class="form-group">
                     <label for="emailconfi"></label>
-                    <input type="email" class="form-control" id="emailconfi" placeholder="Confirmação de e-mail *" name="emailconfir" ngModel/>
+                    <input type="email" class="form-control" id="emailconfi" maxlength="32" placeholder="Confirmação de e-mail *" name="emailconfi" ngModel/>
                 </div>
                 <div class="form-group">
                     <label for="password"></label>
-                    <input type="password" class="form-control" placeholder="Senha *" id="password" name="passowrd" ngModel/>
+                    <input type="password" class="form-control" placeholder="Senha *" id="password" maxlength="12" name="password" ngModel/>
                 </div>
                 <div class="form-group">
                     <label for="passwordconfi"></label>
-                    <input type="password" class="form-control" placeholder="Confirmação de senha *" id="passwordconfi" name="passwordconfi" ngModel/>
+                    <input type="password" class="form-control" placeholder="Confirmação de senha *" id="passwordconfi" maxlength="12" name="passwordconfi" ngModel/>
                 </div>
                 <div class="form-group">
                     <label for="cpf"></label>
-                    <input type="number" class="form-control" placeholder="Cpf" id="cpf" name="cpf" ngModel/>
+                    <input type="number" class="form-control" maxlength="11" placeholder="Cpf" id="cpfcampo" name="cpf" ngModel/>
                 </div>
                 <div class="form-group">
-                    <input type="submit" class="btnSubmit" value="Cadastrar" />
+                    <input onclick="alterarh1()" type="submit" class="btnSubmit" value="Cadastrar" />
                 </div>
-                
             </form>
             <!-- <div class="form-group">
                 <a href="#" class="btnForgetPwd" value="Login">Forget Password?</a>
@@ -72,3 +71,9 @@
         </div>
     </div>
 </div>
+<script>
+    function cadastrarDados(){
+        var cpfEnviar = document.getElementById('cpfcampo').value;
+        alert(cpf);
+    }
+</script>

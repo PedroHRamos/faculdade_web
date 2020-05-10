@@ -13,8 +13,9 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class LoginComponent implements OnInit {
 
   onSubmit(form){
-    console.log(form);
-
+    function alterarh1(){
+      alert("oi");
+  }
   }
 
   constructor(private usuarioService: UsuarioService) {
