@@ -12,17 +12,16 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class LoginComponent implements OnInit {
 
-  onSubmit(form){
-    function alterarh1(){
-      alert("oi");
-  }
-  }
-
   constructor(private usuarioService: UsuarioService) {
   }
 
   ngOnInit(): void {
     this.usuarioService.CadastrarUsuario().subscribe(res => console.log(res));
+  }
+
+  submit(form) {
+    console.log(form);
+    console.log(form.value.email);
   }
 
 }
