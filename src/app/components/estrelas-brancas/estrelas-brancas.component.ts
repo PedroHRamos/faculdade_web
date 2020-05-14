@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-estrelas-brancas',
@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class EstrelasBrancasComponent implements OnInit {
 
   estrelas: string[];
-  
+
+  @Output() estrelaValor = new EventEmitter();
+
   public avaliar(estrela: number) {
 
     for (let i = 0; i < estrela; i++) {
@@ -16,11 +18,11 @@ export class EstrelasBrancasComponent implements OnInit {
     }
 
     if (estrela < 5 ) {
-    for (let i = estrela; i < 5; i++) {
-      this.estrelas[i] = 'far fa-star';
+      for (let i = estrela; i < 5; i++) {
+        this.estrelas[i] = 'far fa-star';
+      }
     }
-  }
-
+    this.estrelaValor.emit(estrela);
   }
 
   constructor() {
