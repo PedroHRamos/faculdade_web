@@ -11,63 +11,77 @@
     </div>
 </div> -->
 <app-navbar></app-navbar>
-        
+
 <div class="container login-container">
-    <div class="row">
-        <div class="col-md-6 login-form-1">
-            <h3>Entre com sua conta</h3>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Seu e-mail *" value="" />
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control" placeholder="Senha *" value="" />
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btnSubmit" value="Login" />
-            </div>
-            <div class="form-group">
-                <button class="btnSubmitGoogle">
-                    Entrar com google
-                    <i class="fa fa-google"></i>
-                </button>
-            </div>
-            <div class="form-group">
-                <a href="#" class="btnForgetPwd">Esqueceu a senha?</a>
-            </div>
+  <div class="row">
+    <div class="col-md-6 login-form-1">
+      <h3>Entre com sua conta</h3>
+      <!--INICIO FORMULARIO LOGIN-->
+      <form #dadosLogin="ngForm">
+        <div class="form-group">
+          <label for="emailLogin"></label>
+          <input type="email" class="form-control" placeholder="Seu e-mail" id="emailLogin" maxlength="32"
+            name="emailLogin" ngModel />
         </div>
-        <div class="col-md-6 login-form-2">
-            <div class="login-logo">
-                <i class="fas fa-glasses icone-meio"></i>
-            </div>
-            <h3>Faça sua conta</h3>
-            <form #dados="ngForm">
-                <div class="form-group">
-                    <label for="email"></label>
-                    <input type="email" class="form-control" id="email" maxlength="32" placeholder="meuemail@gmail.com" name="email" ngModel/>
-                </div>
-                <div class="form-group">
-                    <label for="emailconfi"></label>
-                    <input type="email" class="form-control" id="emailconfi" maxlength="32" placeholder="Confirmação de e-mail *" name="emailconfi" ngModel/>
-                </div>
-                <div class="form-group">
-                    <label for="password"></label>
-                    <input type="password" class="form-control" placeholder="Senha *" id="password" maxlength="12" name="password" ngModel/>
-                </div>
-                <div class="form-group">
-                    <label for="passwordconfi"></label>
-                    <input type="password" class="form-control" placeholder="Confirmação de senha *" id="passwordconfi" maxlength="12" name="passwordconfi" ngModel/>
-                </div>
-                <div class="form-group">
-                    <label for="cpf"></label>
-                    <input type="number" class="form-control" maxlength="11" placeholder="Cpf" id="cpfcampo" name="cpf" ngModel/>
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btnSubmit" value="Cadastrar" (click)="submit(dados)"/>
-                </div>
-            </form>
-            <!-- <div class="form-group">
+        <div class="form-group">
+          <label for="passwordLogin"></label>
+          <input type="password" class="form-control" placeholder="Senha" id="passwordLogin" maxlength="12"
+            name="passwordLogin" ngModel />
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btnSubmit" value="Entrar" (click)="submitLogin(dadosLogin)" />
+        </div>
+        <div class="form-group">
+          <button class="btnSubmitGoogle">
+            Entrar com google
+            <i class="fa fa-google"></i>
+          </button>
+        </div>
+      </form>
+      <!--FIM FORMULARIO LOGIN-->
+      <div class="form-group">
+        <a href="#" class="btnForgetPwd">Esqueceu a senha?</a>
+      </div>
+    </div>
+    <div class="col-md-6 login-form-2">
+      <div class="login-logo">
+        <i class="fas fa-glasses icone-meio"></i>
+      </div>
+      <h3>Faça sua conta</h3>
+      <!--INICIO FORMULARIO CADASTRO-->
+      <form #dadosCadastro="ngForm">
+        <div class="form-group">
+          <label for="emailCadastro"></label>
+          <input type="email" class="form-control" id="emailCadastro" maxlength="32" placeholder="meuemail@gmail.com"
+            name="emailCadastro" ngModel />
+        </div>
+        <div class="form-group">
+          <label for="emailCadastroConfi"></label>
+          <input type="email" class="form-control" id="emailCadastroConfi" maxlength="32"
+            placeholder="Confirmação de e-mail *" name="emailCadastroConfi" ngModel />
+        </div>
+        <div class="form-group">
+          <label for="passwordCadastro"></label>
+          <input type="password" class="form-control" placeholder="Senha *" id="passwordCadastro" maxlength="12"
+            name="passwordCadastro" ngModel />
+        </div>
+        <div class="form-group">
+          <label for="passwordCadastroConfi"></label>
+          <input type="password" class="form-control" placeholder="Confirmação de senha *" id="passwordCadastroConfi"
+            maxlength="12" name="passwordCadastroConfi" ngModel />
+        </div>
+        <div class="form-group">
+          <label for="cpf"></label>
+          <input type="text" class="form-control" maxlength="11" placeholder="Cpf" id="cpf" name="cpf" ngModel />
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btnSubmit" value="Cadastrar" (click)="submitCadastro(dadosCadastro)" />
+        </div>
+      </form>
+      <!--FINAL FORMULARIO CADASTRO-->
+      <!-- <div class="form-group">
                 <a href="#" class="btnForgetPwd" value="Login">Forget Password?</a>
             </div> -->
-        </div>
     </div>
+  </div>
 </div>
