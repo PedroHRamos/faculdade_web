@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionarioComponent implements OnInit {
 
+  estrutura: number;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.estrutura = 0;
   }
 
 }

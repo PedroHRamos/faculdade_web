@@ -12,21 +12,17 @@ export class UsuarioService {
 
   constructor(private http: HttpClient) { }
 
-  CadastrarUsuario(): Observable<any> {
+  CadastrarUsuario(form): Observable<any> {
     // const head = new HttpHeaders().set('X-Requested-With', 'XMLHttpRequest').set('Content-Type', 'application/json');
     const usuario = new UsuarioDTO();
-    const headerss = new HttpHeaders({
-      'X-Requested-With': 'XMLHttpRequest',
-      'Content-Type': 'application/json'
-    });
-    
-    usuario.nome = "Pedro";
-    usuario.cpf = "xxxxxxxxx";
+        
+    usuario.nome = "Mendigo dos mares";
+    usuario.cpf = form.value.cpf;
     usuario.nascimento = new Date("July 21, 2000 01:15:00");
     usuario.estado = "MG";
     usuario.cidade = "BH";
-    usuario.username = "pepedro";
-    usuario.senha = "123456789";
+    usuario.username = form.value.email; //adicionar no bd o email
+    usuario.senha = form.value.password; //criptografar dps
 
     return this.http.post<UsuarioDTO>('http://localhost:52738/usuario/usuario', usuario);
   }

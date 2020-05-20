@@ -12,7 +12,7 @@
         <div class="card p-3 bg-primary">
             <div class="form-group">
                 <p class="branco mb-2"><label for="exampleFormControlInput1">Como voce avalia a estrutura?</label></p>
-                <app-estrelas-brancas></app-estrelas-brancas>
+                <app-estrelas-brancas (estrelaValor)="estrutura = $event"></app-estrelas-brancas>
             </div> 
             <div class="form-group">
                 <p class="branco mb-2"><label for="exampleFormControlInput1">Como voce avalia os professores?</label></p>

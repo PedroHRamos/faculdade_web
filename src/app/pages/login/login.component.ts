@@ -17,9 +17,14 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.usuarioService.CadastrarUsuario().subscribe(res => console.log(res));
+    
   }
 
+  submit(form) {
+    console.log(form);
+    console.log(form.value.email);
+    this.usuarioService.CadastrarUsuario(form).subscribe(res => console.log(res));
+    
   submitLogin(form) {
     var emailLogin = form.value.emailLogin;
     var passwordLogin = form.value.emailLogin;
