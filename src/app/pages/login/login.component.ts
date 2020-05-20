@@ -4,7 +4,8 @@ import { Component, OnInit, Inject } from '@angular/core';
 import * as $ from 'jquery';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { FormGroup } from '@angular/forms';
-
+import { AuthService } from './auth.service';
+import { UsuarioDTO } from 'src/app/dto/usuarioDTO';
 
 @Component({
   selector: 'app-login',
@@ -13,32 +14,22 @@ import { FormGroup } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private usuarioService: UsuarioService) {
+  usuario: UsuarioDTO = new UsuarioDTO();
+
+  constructor(private usuarioService: UsuarioService, private authservice: AuthService) {
   }
 
   ngOnInit(): void {
   }
 
-  submitLogin(form) {
-    var emailLogin = form.value.emailLogin;
-    var passwordLogin = form.value.emailLogin;
+  submitLogin() {
+    this.authservice.fazerLogin(this.usuario);
   }
 
-  submitCadastro(form) {
-    var emailCadastro = form.value.emailCadastro;
-    var emailCadastroConfi = form.value.emailCadastroConfi;
-    var passwordCadastro = form.value.passwordCadastro;
-    var passwordCadastroConfi = form.value.passwordCadastroConfi;
-    var cpf = form.value.cpf;
+  submitCadastro() {
+    console.log(this.usuario);
   }
 
-  /* submitCadastro(form) {
-    console.log(form);
-    console.log(form.value.emailCadastro);
-    console.log(form.value.emailCadastroConfi);
-    console.log(form.value.passwordCadastro);
-    console.log(form.value.passwordCadastroConfi);
-    console.log(form.value.cpf);
-  }*/
+ 
 
 }

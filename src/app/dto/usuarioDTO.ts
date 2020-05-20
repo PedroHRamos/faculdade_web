@@ -10,6 +10,9 @@ export class UsuarioDTO {
     estado: string;
     cidade: string;
     username: string;
+    email: string;
     senha: string;
+    confirmacaoSenha: string;
+    token: string;
 
 }

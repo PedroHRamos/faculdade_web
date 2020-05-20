@@ -20,16 +20,16 @@
       <form #dadosLogin="ngForm">
         <div class="form-group">
           <label for="emailLogin"></label>
-          <input type="email" class="form-control" placeholder="Seu e-mail" id="emailLogin" maxlength="32"
-            name="emailLogin" ngModel />
+          <input type="email" class="form-control" placeholder="Seu e-mail" id="emailLogin" maxlength="50"
+            name="emailLogin" [(ngModel)]="usuario.email" />
         </div>
         <div class="form-group">
           <label for="passwordLogin"></label>
-          <input type="password" class="form-control" placeholder="Senha" id="passwordLogin" maxlength="12"
-            name="passwordLogin" ngModel />
+          <input type="password" class="form-control" placeholder="Senha" id="passwordLogin" maxlength="50"
+            name="passwordLogin" [(ngModel)]="usuario.senha" />
         </div>
         <div class="form-group">
-          <input type="submit" class="btnSubmit" value="Entrar" (click)="submitLogin(dadosLogin)" />
+          <input type="submit" class="btnSubmit" value="Entrar" (click)="submitLogin()" />
         </div>
         <div class="form-group">
           <button class="btnSubmitGoogle">
@@ -48,34 +48,32 @@
         <i class="fas fa-glasses icone-meio"></i>
       </div>
       <h3>Faça sua conta</h3>
+
+
+
       <!--INICIO FORMULARIO CADASTRO-->
       <form #dadosCadastro="ngForm">
         <div class="form-group">
           <label for="emailCadastro"></label>
           <input type="email" class="form-control" id="emailCadastro" maxlength="32" placeholder="meuemail@gmail.com"
-            name="emailCadastro" ngModel />
-        </div>
-        <div class="form-group">
-          <label for="emailCadastroConfi"></label>
-          <input type="email" class="form-control" id="emailCadastroConfi" maxlength="32"
-            placeholder="Confirmação de e-mail *" name="emailCadastroConfi" ngModel />
+            name="emailCadastro" [(ngModel)]="usuario.email" />
         </div>
         <div class="form-group">
           <label for="passwordCadastro"></label>
-          <input type="password" class="form-control" placeholder="Senha *" id="passwordCadastro" maxlength="12"
-            name="passwordCadastro" ngModel />
+          <input type="password" class="form-control" placeholder="Senha *" id="passwordCadastro" maxlength="50"
+            name="passwordCadastro" [(ngModel)]="usuario.senha" />
         </div>
         <div class="form-group">
           <label for="passwordCadastroConfi"></label>
           <input type="password" class="form-control" placeholder="Confirmação de senha *" id="passwordCadastroConfi"
-            maxlength="12" name="passwordCadastroConfi" ngModel />
+            maxlength="50" name="passwordCadastroConfi" [(ngModel)]="usuario.confirmacaoSenha" />
         </div>
         <div class="form-group">
           <label for="cpf"></label>
-          <input type="text" class="form-control" maxlength="11" placeholder="Cpf" id="cpf" name="cpf" ngModel />
+          <input type="text" class="form-control" maxlength="11" placeholder="Cpf" id="cpf" name="cpf" [(ngModel)]="usuario.cpf" />
         </div>
         <div class="form-group">
-          <input type="submit" class="btnSubmit" value="Cadastrar" (click)="submitCadastro(dadosCadastro)" />
+          <input type="submit" class="btnSubmit" value="Cadastrar" (click)="submitCadastro()" />
         </div>
       </form>
       <!--FINAL FORMULARIO CADASTRO-->
