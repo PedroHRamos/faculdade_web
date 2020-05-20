@@ -1,47 +1,51 @@
 <div class="backgroudcontato">
-    <div class="corfundo">
-        <app-navbar></app-navbar>
-        <div class="container">
-          <div class="card" >
-            <div class="card-body">
-              <h5 class="card-title"><b>Dúvidas? Entre em contato conosco.</b></h5>
-              <br>
-              <p class="card-text">Você pode entrar em contato com a equipe <b>GLASSES</b> por meio do formulário abaixo:</p>
-              <form>
-                <div class="form-group">
-                  <label for="nome"><b>Nome completo:</b></label>
-                  <input type="text" class="form-control" id="nome" maxlength="32" placeholder="Marcos Daniel Gonzaga">
-                </div>
-                <div class="form-group">
-                    <label for="email"><b>E-mail:</b></label>
-                    <input type="email" class="form-control" id="email" maxlength="32" placeholder="marcosdaniel42@gmail.com">
-                </div>
-                <div class="form-group">
-                    <label for="mensagem"><b>Mensagem:</b></label>
-                    <textarea class="form-control" id="mensagem" rows="3" maxlength="300" placeholder="O motivo do meu contato é..."></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-              </form>
-              <br>
-              <p class="psocial">Ou entrar em uma de nossas redes sociais:</p>
-              <div class="iconssocial">
-                <a class="btn btn-social-icon btn-facebook">
-                  <span class="fa fa-facebook"></span>
-                </a>
-                <a class="btn btn-social-icon btn-twitter">
-                  <span class="fa fa-twitter"></span>
-                </a>
-                <a class="btn btn-social-icon btn-discord">
-                  <span class="fab fa-discord"></span>
-                </a>
-              </div>
+  <div class="corfundo">
+    <app-navbar></app-navbar>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><b>Dúvidas? Entre em contato conosco.</b></h5>
+          <br>
+          <p class="card-text">Você pode entrar em contato com a equipe <b>GLASSES</b> por meio do formulário abaixo:
+          </p>
+          <form #dadosContato="ngForm">
+            <div class="form-group">
+              <label for="nomeContato"><b>Nome completo:</b></label>
+              <input type="text" class="form-control" id="nomeContato" name="nomeContato" maxlength="32" placeholder="Marcos Daniel Gonzaga"
+                [(ngModel)]="contato.nome"/>
             </div>
+            <div class="form-group">
+              <label for="emailContato"><b>E-mail:</b></label>
+              <input type="email" class="form-control" id="emailContato" name="emailContato" maxlength="32" placeholder="marcosdaniel42@gmail.com"
+                [(ngModel)]="contato.email"/>
+            </div>
+            <div class="form-group">
+              <label for="mensagemContato"><b>Mensagem:</b></label>
+              <textarea class="form-control" id="mensagemContato" name="mensagemContato" rows="3" maxlength="300"
+                placeholder="O motivo do meu contato é..." [(ngModel)]="contato.mensagem"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="submitContato()">Enviar</button>
+          </form>
+          <br>
+          <p class="psocial">Ou entrar em uma de nossas redes sociais:</p>
+          <div class="iconssocial">
+            <a class="btn btn-social-icon btn-facebook">
+              <span class="fa fa-facebook"></span>
+            </a>
+            <a class="btn btn-social-icon btn-twitter">
+              <span class="fa fa-twitter"></span>
+            </a>
+            <a class="btn btn-social-icon btn-discord">
+              <span class="fab fa-discord"></span>
+            </a>
           </div>
         </div>
-        <footer id="sticky-footer" class="py-4 bg-primary text-white-50">
-          <div class="container text-center">
-              <small>Copyright &copy; Glasses</small>
-          </div>
-        </footer>
+      </div>
     </div>
+    <footer id="sticky-footer" class="py-4 bg-primary text-white-50">
+      <div class="container text-center">
+        <small>Copyright &copy; Glasses</small>
+      </div>
+    </footer>
+  </div>
 </div>
