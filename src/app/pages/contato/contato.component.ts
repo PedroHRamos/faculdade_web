@@ -3,7 +3,6 @@ import { ContatoDTO } from 'src/app/dto/contatoDTO';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { AuthService } from '../login/auth.service';
 import { FormGroup } from '@angular/forms';
-import * as $ from 'jquery';
 
 @Component({
   selector: 'app-contato',

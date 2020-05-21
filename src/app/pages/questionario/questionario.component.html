@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div class=""> 
+<div class="">
     <div class="row mt-2 mb-3">
         <div class="col-md-2"></div>
         <div class="col-md-5"><h4>Qual sua opinião sobre essa faculdade?</h4></div>
@@ -10,49 +10,51 @@
     <div class="col-md-2"></div>
     <div class="col-md-4">
         <div class="card p-3 bg-primary">
+          <form #dadosEstrela="ngForm">
             <div class="form-group">
                 <p class="branco mb-2"><label for="exampleFormControlInput1">Como voce avalia a estrutura?</label></p>
-                <app-estrelas-brancas (estrelaValor)="estrutura = $event"></app-estrelas-brancas>
-            </div> 
+                <app-estrelas-brancas (estrelaValor)="estrutura = $event" id="questionarioEstrutura" name="questionarioEstrutura"></app-estrelas-brancas>
+            </div>
             <div class="form-group">
                 <p class="branco mb-2"><label for="exampleFormControlInput1">Como voce avalia os professores?</label></p>
-                <app-estrelas-brancas></app-estrelas-brancas>
-            </div>      
+                <app-estrelas-brancas (estrelaValor)="professores = $event" id="questionarioProfessores" name="questionarioProfessores"></app-estrelas-brancas>
+            </div>
             <div class="form-group">
                 <p class="branco mb-2"><label for="exampleFormControlInput1">Como voce avalia o financeiro?</label></p>
-                <app-estrelas-brancas></app-estrelas-brancas>
+                <app-estrelas-brancas (estrelaValor)="financeiro = $event" id="questionarioFinanceiro" name="questionarioFinanceiro"></app-estrelas-brancas>
             </div>
             <div class="form-group">
                 <p class="branco mb-2"><label for="exampleFormControlInput1">Como voce avalia o atendimento?</label></p>
-                <app-estrelas-brancas></app-estrelas-brancas>
+                <app-estrelas-brancas (estrelaValor)="atendimento = $event" id="questionarioAtendimento" name="questionarioAtendimento"></app-estrelas-brancas>
             </div>
             <div class="form-group">
                 <p class="branco mb-2"><label for="exampleFormControlInput1">Como voce avalia a coordenacao?</label></p>
-                <app-estrelas-brancas></app-estrelas-brancas>
+                <app-estrelas-brancas (estrelaValor)="coordenacao = $event" id="questionarioCoordenacao" name="questionarioCoordenacao"></app-estrelas-brancas>
             </div>
             <div class="form-group">
                 <p class="branco mb-2"><label for="exampleFormControlInput1">Como voce avalia o ambiente virtual?</label></p>
-                <app-estrelas-brancas></app-estrelas-brancas>
+                <app-estrelas-brancas (estrelaValor)="ambienteVirtual = $event" id="questionarioAmbienteVirtual" name="questionarioAmbienteVirtual"></app-estrelas-brancas>
             </div>
             <div class="form-group">
                 <p class="branco mb-2"><label for="exampleFormControlInput1">Deixe um comentario</label></p>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" maxlength="300"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" maxlength="300" name="questionarioComentario" [(ngModel)]="questionario.comentario"></textarea>
             </div>
             <div class="row">
                 <div class="col-md-8"></div>
-                <div class="col-md-4"><button class="btn btn-light" type="submit">Enviar</button></div>
+                <div class="col-md-4"><button class="btn btn-light" type="submit" (click)="submitQuestionario()">Enviar</button></div>
             </div>
+          </form>
         </div>
     </div>
     <div class="col-md-1"></div>
     <div class="col-md-5 d-none d-md-block">
         <div class="mt-md-5"><i class="fas fa-place-of-worship"></i></div>
-        <div class="mt-md-5 ml-5"><i class="fas fa-chalkboard-teacher"></i></div> 
+        <div class="mt-md-5 ml-5"><i class="fas fa-chalkboard-teacher"></i></div>
         <div class="mt-md-5"><i class="fas fa-search-dollar"></i></div>
         <div class="mt-md-5 ml-5"><i class="fas fa-phone"></i></div>
         <div class="mt-md-5"><i class="fas fa-user-tie"></i></div>
         <div class="mt-md-5 ml-5"><i class="far fa-window-restore"></i></div>
     </div>
-    
+
 </form>
 </div>
