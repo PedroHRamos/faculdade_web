@@ -13,6 +13,9 @@ import { QuestionarioComponent } from './questionario/questionario.component';
 import { ContatoComponent } from './contato/contato.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { CadastroFaculdadeComponent } from './cadastro-faculdade/cadastro-faculdade.component';
+import { FaqComponent } from './faq/faq.component';
+import { CadastroComponent } from './cadastro/cadastro.component';
+import { AjudaComponent } from './ajuda/ajuda.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { CadastroFaculdadeComponent } from './cadastro-faculdade/cadastro-faculd
     ContatoComponent,
     SobreNosComponent,
     CadastroFaculdadeComponent,
+    FaqComponent,
+    CadastroComponent,
+    AjudaComponent,
   ],
   imports: [
     CommonModule,

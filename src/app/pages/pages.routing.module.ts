@@ -9,6 +9,9 @@ import { ContatoComponent } from './contato/contato.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { QuestionarioComponent } from './questionario/questionario.component';
 import { CadastroFaculdadeComponent } from './cadastro-faculdade/cadastro-faculdade.component';
+import { AjudaComponent } from './ajuda/ajuda.component';
+import { CadastroComponent } from './cadastro/cadastro.component';
+import { FaqComponent } from './faq/faq.component';
 
 
 const routes: Routes = [
@@ -23,6 +26,9 @@ const routes: Routes = [
     { path: 'questionario', component: QuestionarioComponent },
     { path: 'detalhe-faculdade', component: DetalheFaculComponent },
     { path: 'cadastro-faculdade', component: CadastroFaculdadeComponent},
+    { path: 'ajuda', component: AjudaComponent},
+    { path: 'cadastro', component: CadastroComponent},
+    { path: 'faq', component: FaqComponent},
     // { path: 'menu', component: MenuComponent,
     //   children: [
     //     {
