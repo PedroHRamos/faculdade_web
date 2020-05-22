@@ -12,6 +12,7 @@ import { PagesRoutingModule } from './pages.routing.module';
 import { QuestionarioComponent } from './questionario/questionario.component';
 import { ContatoComponent } from './contato/contato.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { CadastroFaculdadeComponent } from './cadastro-faculdade/cadastro-faculdade.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
     QuestionarioComponent,
     ContatoComponent,
     SobreNosComponent,
+    CadastroFaculdadeComponent,
   ],
   imports: [
     CommonModule,

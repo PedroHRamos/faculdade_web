@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { ContatoComponent } from './contato/contato.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { QuestionarioComponent } from './questionario/questionario.component';
+import { CadastroFaculdadeComponent } from './cadastro-faculdade/cadastro-faculdade.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
     { path: 'sobre-nos', component: SobreNosComponent},
     { path: 'questionario', component: QuestionarioComponent },
     { path: 'detalhe-faculdade', component: DetalheFaculComponent },
+    { path: 'cadastro-faculdade', component: CadastroFaculdadeComponent},
     // { path: 'menu', component: MenuComponent,
     //   children: [
     //     {
