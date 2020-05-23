@@ -26,8 +26,4 @@ export class LoginComponent implements OnInit {
     this.authservice.fazerLogin(this.usuario);
   }
 
-  submitCadastro() {
-    console.log(this.usuario);
-  }
-
 }

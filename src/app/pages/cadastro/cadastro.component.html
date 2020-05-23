@@ -1,1 +1,149 @@
-<p>cadastro works!</p>
+<div class="background">
+  <app-navbar></app-navbar>
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+    <h1>Cadastro</h1>
+    <p>Para poder fazer uma avaliação em nosso site você precisa criar uma conta, por favor preencha os campos abaixo:</p>
+    <form #dadosCadastro="ngForm">
+      <div class="form-group">
+        <label for="nome"><b>Nome completo:</b></label>
+        <input type="text" class="form-control" id="nome" placeholder="João Batista Santos" name="nome" [(ngModel)]="cadastro.nome">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="email"><b>E-mail:</b></label>
+          <input type="email" class="form-control" id="email" placeholder="joaobatista@gmail.com" name="email" [(ngModel)]="cadastro.email">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="confirmaremail"><b>Confirmar e-mail:</b></label>
+          <input type="email" class="form-control" id="confirmaremail" placeholder="" name="confirmaremail" [(ngModel)]="cadastro.confirmaremail">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="senha"><b>Senha:</b></label>
+          <input type="password" class="form-control" id="senha" placeholder="Senha" name="senha" [(ngModel)]="cadastro.senha">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="confirmacaosenha"><b>Confirmar senha:</b></label>
+          <input type="password" class="form-control" id="confirmacaosenha" placeholder="Repita sua senha" name="confirmarsenha" [(ngModel)]="cadastro.confirmarsenha">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="nascimento"><b>Data de nascimento:</b></label>
+        <input type="date" class="form-control" id="nascimento" placeholder="12/12/2012" name="nascimento" [(ngModel)]="cadastro.nascimento">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="cidade"><b>Cidade:</b></label>
+          <input type="text" class="form-control" id="cidade" name="cidade" [(ngModel)]="cadastro.cidade">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="estado"><b>Estado:</b></label>
+          <select id="estado" class="form-control" name="estado" [(ngModel)]="cadastro.estado">
+            <option selected>Escolher</option>
+            <option>Acre</option>
+            <option>Alagoas</option>
+            <option>Amapá</option>
+            <option>Amazonas</option>
+            <option>Bahia</option>
+            <option>Ceará</option>
+            <option>Distrito Federal</option>
+            <option>Espírito Santo</option>
+            <option>Goiás</option>
+            <option>Maranhão</option>
+            <option>Mato Grosso</option>
+            <option>Mato Grosso do Sul</option>
+            <option>Minas Gerais</option>
+            <option>Pará</option>
+            <option>Paraíba</option>
+            <option>Paraná</option>
+            <option>Pernambuco</option>
+            <option>Piauí</option>
+            <option>Rio de Janeiro</option>
+            <option>Rio Grande do Norte</option>
+            <option>Rio Grande do Sul</option>
+            <option>Rondônia</option>
+            <option>Roraima</option>
+            <option>Santa Catarina</option>
+            <option>São Paulo</option>
+            <option>Sergipe</option>
+            <option>Tocantins</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cpf"><b>Cpf:</b></label>
+        <input type="text" class="form-control" id="cpf" placeholder="" name="cpf" [(ngModel)]="cadastro.cpf">
+      </div>
+      <div class="form-group">
+        <label for="comprovante"><b>Comprovante de matrícula:</b></label>
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#modalinfocomprovante">
+          <b>(?)</b>
+        </button>
+        <div class="modal fade" id="modalinfocomprovante" tabindex="-1" role="dialog" aria-labelledby="modalinfo" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalinfo"><b>Documentos aceitos:</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Faça o upload de um documento que mostre claramente que você está atualmente matriculado na faculdade. O documento precisa incluir seu nome, sobrenome, nome da universidade e uma data de emissão a partir do atual período acadêmico ou nos últimos 3 meses. Você pode carregar mais de um documento, se necessário. Estes podem incluir:</p>
+                <ul>
+                  <li>Carta oficial de inscrição da sua instituição acadêmica (as cartas de aceitação não serão aprovadas)</li>
+                  <li>Horário das aulas para o atual período acadêmico</li>
+                  <li>Recibo de inscrição ou recibo de matrícula</li>
+                  <li>Transcrição que mostra as aulas em andamento no momento</li>
+                  <li>Outro documento emitido pela escola que exibe seu nome / sobrenome, uma data de emissão a partir do período atual ou nos últimos três meses</li>
+                </ul>
+                <p>Sugerimos enfaticamente que oculte ou edite todas as informações confidenciais da documentação antes de enviá-las para o nosso sistema.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <input type="file" class="form-control-file" id="comprovante">
+      </div>
+      <hr class="my-4">
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="confirmar">
+          <label class="form-check-label" for="confirmar">
+            Concordo com os termos de uso do<button type="button" class="btn btn-link" data-toggle="modal" data-target="#modaltermos"><b>GLASSES.</b></button>
+          </label>
+        </div>
+        <!-- Modal -->
+<div class="modal fade" id="modaltermos" tabindex="-1" role="dialog" aria-labelledby="modalternosinfo" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modaltermosinfo"><b>Termos de uso GLASSES</b></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Este é um projeto universitário, fazendo o cadastro você nos ajuda a concluir nosso objetivo!</p>
+        <p><b>Seus dados não serão compartilhados com ninguém!</b></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Entrar" (click)="submitCadastro()" />
+      </div>
+    </form>
+  </div>
+</div>
+  </div>
+</div>

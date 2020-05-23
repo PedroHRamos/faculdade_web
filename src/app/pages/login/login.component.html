@@ -1,85 +1,45 @@
-<!-- <div class="container background-image">
-    <div class="row">
-        <div class="col">
-
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-
-        </div>
-    </div>
-</div> -->
+<div class="background">
 <app-navbar></app-navbar>
-
-<div class="container login-container">
-  <div class="row">
-    <div class="col-md-6 login-form-1">
-      <h3>Entre com sua conta</h3>
-      <!--INICIO FORMULARIO LOGIN-->
-      <form #dadosLogin="ngForm">
+    <div class="d-flex flex-row-reverse bd-highlight">
+    <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Entrar / Login</h5>
+      <h6 class="card-text">Você precisa logar em sua conta para fazer uma avaliação:</h6>
+      <br>
+      <br>
+      <form #dadoslogin="ngForm" class="needs-validation" novalidate>
         <div class="form-group">
-          <label for="emailLogin"></label>
-          <input type="email" class="form-control" placeholder="Seu e-mail" id="emailLogin" maxlength="50"
-            name="emailLogin" [(ngModel)]="usuario.email" />
+          <label for="emailLogin"><b>E-mail:</b></label>
+          <input type="email" class="form-control" id="emailLogin" placeholder="meuemail@gmail.com" maxlength="50"
+          name="emailLogin" [(ngModel)]="usuario.email" required>
+          <div class="invalid-feedback">
+            Você precisa do seu e-mail para fazer login!
+          </div>
+          <div class="valid-feedback">
+            Tudo certo!
+          </div>
         </div>
         <div class="form-group">
-          <label for="passwordLogin"></label>
-          <input type="password" class="form-control" placeholder="Senha" id="passwordLogin" maxlength="50"
-            name="passwordLogin" [(ngModel)]="usuario.senha" />
+          <label for="passwordLogin"><b>Senha:</b></label>
+          <input type="password" class="form-control" id="passwordLogin" placeholder="" maxlength="50"
+          name="passwordLogin" [(ngModel)]="usuario.senha" required>
+          <div class="invalid-feedback">
+            Sua senha está incorreta ou vazia!
+          </div>
         </div>
         <div class="form-group">
-          <input type="submit" class="btnSubmit" value="Entrar" (click)="submitLogin()" />
+          <input type="submit" class="btn btn-primary" value="Entrar" (click)="submitLogin()" />
         </div>
-        <div class="form-group">
-          <button class="btnSubmitGoogle">
-            Entrar com google
-            <i class="fa fa-google"></i>
-          </button>
-        </div>
+        <hr class="my-4">
+        <h6 id="ou" class="card-text"><b>Ou você pode entrar com:</b>:</h6>
+        <br>
+        <br>
+        <button class="btn btn-lg btn-google btn-block" type="submit"><i class="fab fa-google mr-2"></i> Entrar
+          com Google</button>
+        <button class="btn btn-lg btn-facebook btn-block" type="submit"><i class="fab fa-facebook-f mr-2"></i>
+          Entrar com Facebook</button>
       </form>
-      <!--FIM FORMULARIO LOGIN-->
-      <div class="form-group">
-        <a href="#" class="btnForgetPwd">Esqueceu a senha?</a>
-      </div>
-    </div>
-    <div class="col-md-6 login-form-2">
-      <div class="login-logo">
-        <i class="fas fa-glasses icone-meio"></i>
-      </div>
-      <h3>Faça sua conta</h3>
-
-
-
-      <!--INICIO FORMULARIO CADASTRO-->
-      <form #dadosCadastro="ngForm">
-        <div class="form-group">
-          <label for="emailCadastro"></label>
-          <input type="email" class="form-control" id="emailCadastro" maxlength="32" placeholder="meuemail@gmail.com"
-            name="emailCadastro" [(ngModel)]="usuario.email" />
-        </div>
-        <div class="form-group">
-          <label for="passwordCadastro"></label>
-          <input type="password" class="form-control" placeholder="Senha *" id="passwordCadastro" maxlength="50"
-            name="passwordCadastro" [(ngModel)]="usuario.senha" />
-        </div>
-        <div class="form-group">
-          <label for="passwordCadastroConfi"></label>
-          <input type="password" class="form-control" placeholder="Confirmação de senha *" id="passwordCadastroConfi"
-            maxlength="50" name="passwordCadastroConfi" [(ngModel)]="usuario.confirmacaoSenha" />
-        </div>
-        <div class="form-group">
-          <label for="cpf"></label>
-          <input type="text" class="form-control" maxlength="11" placeholder="Cpf" id="cpf" name="cpf" [(ngModel)]="usuario.cpf" />
-        </div>
-        <div class="form-group">
-          <input type="submit" class="btnSubmit" value="Cadastrar" (click)="submitCadastro()" />
-        </div>
-      </form>
-      <!--FINAL FORMULARIO CADASTRO-->
-      <!-- <div class="form-group">
-                <a href="#" class="btnForgetPwd" value="Login">Forget Password?</a>
-            </div> -->
     </div>
   </div>
+</div>
 </div>

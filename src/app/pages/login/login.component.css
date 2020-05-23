@@ -1,99 +1,41 @@
-#itens{
-    margin-left: 10%;
-    margin-right: 10%;
+.background {
+  background: url(https://i.imgur.com/PhKxgQn.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
 }
 
-.background-image{
-    background-image: url('../../../assets/img/formandos.jpg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 100%;
+.btn-google {
+  color: white;
+  background-color: #ea4335;
+  border-radius: 25px;
+  width: auto;
+  margin: auto;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.icone-meio{
-    font-size: 3rem;
-    color: #fff;
+.btn-facebook {
+  color: white;
+  background-color: #3b5998;
+  border-radius: 25px;
+  width: auto;
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.icone-nav{
-    font-size: 1.5rem;
-    color: #fff;
+.card {
+  padding: 20px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  margin-top: -24px;
+  width: 35rem;
+  min-height: 93vh;
 }
 
-.fa-google{
-    color: #4285F4;
+.card-title {
+  font-size: 3rem;
 }
 
-.login-container{
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
-
-.login-logo{
-    position: relative;
-    margin-left: -41.5%;
-}
-
-.login-logo i{
-    position: absolute;
-    width: 20%;
-    margin-top: 19%;
-    background: #282726;
-    border-radius: 4.5rem;
-    padding: 5%;
-}
-
-.login-form-1{
-    padding: 9%;
-    background:#282726;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-}
-
-.login-form-1 h3{
-    text-align: center;
-    margin-bottom:12%;
-    color:#fff;
-}
-
-.login-form-2{
-    padding: 9%;
-    background: #007bff!important;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-}
-
-.login-form-2 h3{
-    text-align: center;
-    margin-bottom:12%;
-    color: #fff;
-}
-
-.btnSubmit{
-    font-weight: 600;
-    width: 50%;
-    color: #282726;
-    background-color: #fff;
-    border: none;
-    border-radius: 1.5rem;
-    padding:2%;
-}
-
-.btnSubmitGoogle{
-    font-weight: 600;
-    width: 50%;
-    color: #282726;
-    background-color: #fff;
-    border: none;
-    border-radius: 1.5rem;
-    padding:2%;
-}
-
-.btnForgetPwd{
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.btnForgetPwd:hover{
-    text-decoration:none;
-    color:#fff;
+#ou {
+  text-align: center;
 }
