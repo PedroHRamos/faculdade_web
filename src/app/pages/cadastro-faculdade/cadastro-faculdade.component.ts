@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CadastroFaculdadeDTO } from 'src/app/dto/cadastrofaculdadeDTO';
 
 @Component({
   selector: 'app-cadastro-faculdade',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroFaculdadeComponent implements OnInit {
 
+  cadastroFaculdade: CadastroFaculdadeDTO = new CadastroFaculdadeDTO();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  submitCadastroFaculdade() {
+    console.log(this.cadastroFaculdade);
   }
 
 }

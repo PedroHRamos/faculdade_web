@@ -1,10 +1,125 @@
-<app-navbar></app-navbar>
+<div class="background">
+  <app-navbar></app-navbar>
   <div class="container">
-
-  </div>
-  <footer id="sticky-footer" class="py-4 bg-primary text-white-50">
-      <div class="container text-center">
-          <small>Copyright &copy; Glasses</small>
+    <div class="card">
+      <div class="card-body">
+        <h1>Cadastro de Faculdades</h1>
+        <p>Aqui você pode "Solicitar" o cadastro de uma instituição de ensino superior preenchendo os dados abaixo:</p>
+        <form #dadosCadastroFaculdade="ngForm">
+          <div class="form-group">
+            <label for="nome"><b>Nome:</b></label>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome da instituição"
+              [(ngModel)]="cadastroFaculdade.nome">
+          </div>
+          <div class="form-group">
+            <label for="descricao"><b>Descrição:</b></label>
+            <textarea class="form-control" id="descricao" name="descricao" rows="3" maxlength="300"
+              placeholder="Deixe uma breve descrição da unidade aqui."
+              [(ngModel)]="cadastroFaculdade.descricao"></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="cidade"><b>Cidade:</b></label>
+              <input type="text" class="form-control" id="cidade" name="cidade" [(ngModel)]="cadastroFaculdade.cidade">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="estado"><b>Estado:</b></label>
+              <select id="estado" class="form-control" name="estado" [(ngModel)]="cadastroFaculdade.estado">
+                <option selected>Escolher</option>
+                <option>Acre</option>
+                <option>Alagoas</option>
+                <option>Amapá</option>
+                <option>Amazonas</option>
+                <option>Bahia</option>
+                <option>Ceará</option>
+                <option>Distrito Federal</option>
+                <option>Espírito Santo</option>
+                <option>Goiás</option>
+                <option>Maranhão</option>
+                <option>Mato Grosso</option>
+                <option>Mato Grosso do Sul</option>
+                <option>Minas Gerais</option>
+                <option>Pará</option>
+                <option>Paraíba</option>
+                <option>Paraná</option>
+                <option>Pernambuco</option>
+                <option>Piauí</option>
+                <option>Rio de Janeiro</option>
+                <option>Rio Grande do Norte</option>
+                <option>Rio Grande do Sul</option>
+                <option>Rondônia</option>
+                <option>Roraima</option>
+                <option>Santa Catarina</option>
+                <option>São Paulo</option>
+                <option>Sergipe</option>
+                <option>Tocantins</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-group">
+              <label for="rua"><b>Rua:</b></label>
+              <input type="text" class="form-control" id="rua" placeholder="" name="rua"
+                [(ngModel)]="cadastroFaculdade.rua">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="numero"><b>Número:</b></label>
+              <input type="text" class="form-control" id="numero" placeholder="" name="numero"
+                [(ngModel)]="cadastroFaculdade.numero">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="bairro"><b>Bairro:</b></label>
+              <input type="text" class="form-control" id="bairro" placeholder="" name="bairro"
+                [(ngModel)]="cadastroFaculdade.bairro">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-group">
+              <label for="rua"><b>Campus:</b></label>
+              <input type="text" class="form-control" id="campus" placeholder="" name="campus"
+                [(ngModel)]="cadastroFaculdade.campus">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="imagemUnidade"><b>Imagem da unidade:</b></label>
+            <input type="file" class="form-control-file" id="imagemUnidade">
+          </div>
+          <hr class="my-4">
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="confirmar">
+          <label class="form-check-label" for="confirmar">
+            Concordo com os termos de uso do<button type="button" class="btn btn-link" data-toggle="modal" data-target="#modaltermos"><b>GLASSES.</b></button>
+          </label>
+        </div>
+        <!-- Modal -->
+<div class="modal fade" id="modaltermos" tabindex="-1" role="dialog" aria-labelledby="modalternosinfo" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modaltermosinfo"><b>Termos de uso GLASSES</b></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-  </footer>
-
+      <div class="modal-body">
+        <p>Este é um projeto universitário, fazendo o cadastro você nos ajuda a concluir nosso objetivo!</p>
+        <p><b>Seus dados ou da instituição não serão compartilhados com ninguém!</b></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Entrar" (click)="submitCadastroFaculdade()" />
+      </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
