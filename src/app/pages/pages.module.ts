@@ -16,6 +16,7 @@ import { CadastroFaculdadeComponent } from './cadastro-faculdade/cadastro-faculd
 import { FaqComponent } from './faq/faq.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { AjudaComponent } from './ajuda/ajuda.component';
+import { DashBoardComponent } from './dash-board/dash-board.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AjudaComponent } from './ajuda/ajuda.component';
     FaqComponent,
     CadastroComponent,
     AjudaComponent,
+    DashBoardComponent,
   ],
   imports: [
     CommonModule,
