@@ -10,19 +10,19 @@ input{
     flex: 1 0 auto;
 }
 
-#sticky-footer {
+/* #sticky-footer {
     flex-shrink: none;
     bottom: 0;
     position: absolute;
     width: 100%;
-}
+} */
 
 #search-input {
     margin-right: 0px;
 }
 
 .align-middle {
-    position: absolute;
+    /* position: absolute; */
     top: 40%;
     width: 100%;
 }

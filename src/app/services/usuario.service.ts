@@ -24,7 +24,7 @@ export class UsuarioService {
     usuario.username = form.value.email; //adicionar no bd o email
     usuario.senha = form.value.password; //criptografar dps
 
-    return this.http.post<UsuarioDTO>('http://localhost:52738/usuario/usuario', usuario);
+    return this.http.post<UsuarioDTO>('http://localhost:52738/usuario', usuario);
   }
 
 }

@@ -1,28 +1,29 @@
 <div class="background-image">
 
     <app-navbar></app-navbar>
-
-    <div id="page-content">
-        <div class="container text-center">
-            <div class="row justify-content-center">
-                <div class="col-md-7">
-                    <h1 class="font-weight-light mt-4 text-white">Glasses</h1>
-                    <p class="lead text-white">Avaliação de universidades de alunos para alunos</p>
+    <div class="container">
+        <div id="page-content">
+            <div class="container text-center">
+                <div class="row justify-content-center">
+                    <div class="col-md-7">
+                        <h1 class="font-weight-light mt-4 text-white">Glasses</h1>
+                        <p class="lead text-white">Avaliação de universidades de alunos para alunos</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="align-middle">
-        <label class="text-white label-center">Pesquise alguma faculdade</label>
-        <div id="search-input" class="container">
-            <form #dadosPesquisa="ngForm">
-            <div class="row">
-                <div class="col-2 d-block d-md-none"></div>
-                <div class="col-8"><input name="dado" type="text" class="form-control margin-input"[(ngModel)]="pesquisa.dado" (keypress)="teclaPressionada()" ></div>
-                <div class="col-2"><button class="btn btn-primary"><i class="fa fa-search"></i></button></div>
-               </div>
-            </form>
+        <div class="align-middle">
+            <label class="text-white label-center">Pesquise alguma faculdade</label>
+            <div id="search-input" class="container">
+                <form #dadosPesquisa="ngForm">
+                <div class="row">
+                    <div class="col-2 d-block d-md-none"></div>
+                    <div class="col-8"><input name="dado" type="text" class="form-control margin-input"[(ngModel)]="pesquisa.dado" (keypress)="teclaPressionada()" ></div>
+                    <div class="col-2"><button class="btn btn-primary"><i class="fa fa-search"></i></button></div>
+                </div>
+                </form>
+            </div>
         </div>
     </div>
 

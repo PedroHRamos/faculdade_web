@@ -11,11 +11,11 @@ export class InstituicaoService {
   constructor(private http: HttpClient) { }
 
   obterInstituicoes(): Observable<Array<InstituicaoDTO>> {
-    return this.http.get<Array<InstituicaoDTO>>('http://localhost:52738/instituicao/instituicao');
+    return this.http.get<Array<InstituicaoDTO>>('http://localhost:52738/instituicao');
   }
 
   obterInstituicao(id: number) {
-    return this.http.get<InstituicaoDTO>(`http://localhost:52738/instituicao/instituicao?id=${id}`);
+    return this.http.get<InstituicaoDTO>(`http://localhost:52738/instituicao?id=${id}`);
   }
 
 }

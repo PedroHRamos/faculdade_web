@@ -16,6 +16,6 @@ export class AlunoService {
     aluno.Instituicao = 1;
     aluno.Curso = 1;
     aluno.Usuario = 1;
-    return this.http.post<AlunoDTO>('http://localhost:52738/aluno/aluno', aluno);
+    return this.http.post<AlunoDTO>('http://localhost:52738/aluno', aluno);
   }
 }
