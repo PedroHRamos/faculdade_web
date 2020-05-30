@@ -13,10 +13,6 @@ export class AlunoService {
   CadastrarAluno(): Observable<any> {
     // const head = new HttpHeaders().set('X-Requested-With', 'XMLHttpRequest').set('Content-Type', 'application/json');
     const aluno = new AlunoDTO();
-    const headerss = new HttpHeaders({
-      'X-Requested-With': 'XMLHttpRequest',
-      'Content-Type': 'application/json'
-    });
     aluno.Instituicao = 1;
     aluno.Curso = 1;
     aluno.Usuario = 1;

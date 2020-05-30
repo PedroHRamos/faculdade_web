@@ -14,15 +14,17 @@
                         <th scope="col">Infraestrutura</th>
                         <th scope="col">Cordenação</th>
                     </tr>
-                    <tr routerLink="/detalhe-faculdade" routerLinkActive="active" class="hover-link">
+                </thead>
+                <tbody *ngFor="let instituicao of instiuicoes">
+                    <tr class="hover-link" (click)="detalheInstituicao(instituicao.id)">
                         <td scope="row d-none d-md-block" class="noBorderBottom">8</td>
                         <td><label>2</label><span class="badge badge-pill badge-danger">Ruim</span></td>
-                        <td>Centro Universitário Una</td>
+                        <td>{{ instituicao.nome }}</td>
                         <td>4</td>
                         <td>1</td>
                         <td>1</td>
                     </tr>
-                </thead>
+                </tbody>
             </table>
         </div>
 
