@@ -2,7 +2,7 @@
   background: url(https://i.imgur.com/PhKxgQn.png);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
+  background-attachment: scroll;
 }
 
 .btn-google {
