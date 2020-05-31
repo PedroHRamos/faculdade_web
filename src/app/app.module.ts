@@ -1,9 +1,8 @@
 import { FormsModule } from '@angular/forms';
-import { AlunoService } from './services/aluno.service';
 import { ComponentsModule } from './components/components.module';
 import { PagesRoutingModule } from './pages/pages.routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
@@ -23,9 +22,10 @@ import { AuthService } from './pages/login/auth.service';
     PagesRoutingModule,
     BrowserAnimationsModule,
     ComponentsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [AuthService],
+  schemas: [ NO_ERRORS_SCHEMA ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

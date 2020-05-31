@@ -1,7 +1,8 @@
+import { InstituicaoService } from './../../services/instituicao.service';
 import { Component, OnInit } from '@angular/core';
-import { PesquisaDTO } from 'src/app/dto/PesquisaDTO';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { FormGroup } from '@angular/forms';
+import { InstituicaoDTO } from 'src/app/dto/instituicaoDTO';
 
 @Component({
   selector: 'app-home',
@@ -9,15 +10,26 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  
-  pesquisa: PesquisaDTO
-  constructor(private usuarioService: UsuarioService) {
-    this.pesquisa = new PesquisaDTO();
-   }
+
+  constructor(
+    private usuarioService: UsuarioService,
+    private instituicaoService: InstituicaoService) {}
+
+  instituicoes: Array<InstituicaoDTO>;
+  strInstituicao: string;
 
   ngOnInit(): void {
+    this.obterInstituicoes();
   }
- teclaPressionada() {
-   console.log(this.pesquisa);
- } 
+
+  obterInstituicoes() {
+    this.instituicaoService.obterInstituicoes().subscribe(res => {
+      this.instituicoes = res;
+    });
+  }
+
+  pesquisaInstituicao() {
+    
+  }
+
 }
