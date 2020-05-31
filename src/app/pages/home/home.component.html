@@ -41,15 +41,12 @@
         </div>
     </div>
     <div class="row justify-content-center align-items-center">
-        <input id="inputInstituicao" name="instituicao" type="text" class="form-control" [(ngModel)]="strInstituicao" (keypress)="pesquisaInstituicao()">
+        <input id="inputInstituicao" name="instituicao" type="text" class="form-control" (change)="pesquisaInstituicao()" [(ngModel)]="strInstituicao">
         <button class="btn btn-primary"><i class="fa fa-search"></i></button>
     </div>
-    <div class="row justify-content-center align-items-center">
-        <ul class="list-group" id="myList" *ngIf="strInstituicao.length > 3">
-            <li class="list-group-item list-group-item-action">First item</li>
-            <li class="list-group-item list-group-item-action">Second item</li>
-            <li class="list-group-item list-group-item-action">Third item</li>
-            <li class="list-group-item list-group-item-action">Fourth</li>
+    <div *ngIf="strInstituicao.length > 2" class="row justify-content-center align-items-center" >
+        <ul class="list-group" id="myList" *ngFor="let item of instituicoesFiltradas">
+            <li class="list-group-item list-group-item-action" (click)="detalheInstituicao(item.id)">{{item.nome}}</li>
         </ul>
     </div>
 
