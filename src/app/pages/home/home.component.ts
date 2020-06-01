@@ -4,7 +4,6 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 import { FormGroup } from '@angular/forms';
 import { InstituicaoDTO } from 'src/app/dto/instituicaoDTO';
 import { Router } from '@angular/router';
-import * as $ from 'jquery';
 
 @Component({
   selector: 'app-home',
