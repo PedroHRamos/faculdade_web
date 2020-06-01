@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
 
   pesquisaInstituicao() {
     if (this.strInstituicao.length > 2) {
-      this.instituicoesFiltradas = this.instituicoes.filter(x => this.strInstituicao.toLowerCase() === x.nome.toLowerCase());
+      this.instituicoesFiltradas = this.instituicoes.filter(x => this.strInstituicao.toLowerCase() === x.bairro.toLowerCase());
     }
   }
 

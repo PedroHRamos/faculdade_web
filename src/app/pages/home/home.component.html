@@ -1,4 +1,6 @@
-<div class="background-image">
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Bungee">
+<div class="bg">
 
     <app-navbar></app-navbar>
 
@@ -34,9 +36,9 @@
         </div>
     </footer> -->
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" id="espaco">
         <div class="col-md-7">
-            <h1 class="font-weight-light mt-4 text-white align-center">Glasses</h1>
+            <h1 id="titulo" class="font-weight-light mt-4 align-center">Glasses</h1>
             <p class="lead text-white align-center">Avaliação de universidades de alunos para alunos</p>
         </div>
     </div>
@@ -44,9 +46,9 @@
         <input id="inputInstituicao" name="instituicao" type="text" class="form-control" (change)="pesquisaInstituicao()" [(ngModel)]="strInstituicao">
         <button class="btn btn-primary"><i class="fa fa-search"></i></button>
     </div>
-    <div *ngIf="strInstituicao.length > 2" class="row justify-content-center align-items-center" >
-        <ul class="list-group" id="myList" *ngFor="let item of instituicoesFiltradas">
-            <li class="list-group-item list-group-item-action" (click)="detalheInstituicao(item.id)">{{item.nome}}</li>
+    <div id="barra" *ngIf="strInstituicao.length > 2" class="align-items-center">
+        <ul class="list-group row justify-content-center align-items-center" id="myList">
+            <li class="list-group-item list-group-item-action" *ngFor="let item of instituicoesFiltradas" (click)="detalheInstituicao(item.id)">{{item.nome}}</li>
         </ul>
     </div>
 
