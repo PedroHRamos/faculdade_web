@@ -1,3 +1,4 @@
+import { TesteComponent } from './teste/teste.component';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -33,6 +34,7 @@ import { DashBoardComponent } from './dash-board/dash-board.component';
     CadastroComponent,
     AjudaComponent,
     DashBoardComponent,
+    TesteComponent
   ],
   imports: [
     CommonModule,

@@ -1,3 +1,4 @@
+import { TesteComponent } from './teste/teste.component';
 import { DetalheFaculComponent } from './detalhe-facul/detalhe-facul.component';
 import { RankComponent } from './rank/rank.component';
 import { MenuComponent } from './menu/menu.component';
@@ -30,7 +31,8 @@ const routes: Routes = [
     { path: 'ajuda', component: AjudaComponent},
     { path: 'cadastro', component: CadastroComponent},
     { path: 'faq', component: FaqComponent},
-    { path: 'dash-board', component: DashBoardComponent}
+    { path: 'dash-board', component: DashBoardComponent},
+    { path: 'teste', component: TesteComponent}
     // { path: 'menu', component: MenuComponent,
     //   children: [
     //     {

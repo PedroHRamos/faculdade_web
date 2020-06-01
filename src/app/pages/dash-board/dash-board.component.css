@@ -1,0 +1,24 @@
+#itens {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.fa-glasses {
+  font-size: 1.5rem;
+}
+
+.fa-user-circle {
+  font-size: 2em;
+}
+
+.navbar.navbar-expand-lg.navbar-dark.bg-primary {
+  padding: 1px;
+}
+
+.nav-item.dropdown {
+  left: 100%;
+}
+
+.dropdown-menu {
+  min-width: 1rem;
+}
