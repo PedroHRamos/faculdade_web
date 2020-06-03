@@ -17,6 +17,7 @@ export class CadastroComponent implements OnInit {
 
   submitCadastro() {
     console.log(this.cadastro);
+    //this.route.navigate(['/detalhe-faculdade'], this.cadastro);
   }
 
 }
