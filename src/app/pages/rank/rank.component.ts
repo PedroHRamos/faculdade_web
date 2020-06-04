@@ -32,4 +32,35 @@ export class RankComponent implements OnInit {
     });
   }
 
+  ordernarNome() {
+    function compare(a, b) {
+      const bandA = a.nome.toUpperCase();
+      const bandB = b.nome.toUpperCase();
+
+      let comparison = 0;
+      if (bandA > bandB) {
+        comparison = 1;
+      } else if (bandA < bandB) {
+        comparison = -1;
+      }
+      return comparison;
+    }
+    console.log(this.instiuicoes.sort(compare));
+  }
+
+  ordernarProfessor() {
+    function compare(a, b) {
+      const bandA = a.professor.toUpperCase();
+      const bandB = b.professor.toUpperCase();
+
+      let comparison = 0;
+      if (bandA > bandB) {
+        comparison = 1;
+      } else if (bandA < bandB) {
+        comparison = -1;
+      }
+      return comparison;
+    }
+    console.log(this.instiuicoes.sort(compare));
+  }
 }
