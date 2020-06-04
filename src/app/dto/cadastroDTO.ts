@@ -7,6 +7,7 @@ export class CadastroDTO {
   cidade: string;
   email: string;
   confirmaremail: string;
+  username: string;
   senha: string;
   confirmarsenha: string;
 
