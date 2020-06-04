@@ -49,7 +49,7 @@
     </div>
     <div id="barra" *ngIf="strInstituicao.length > 2" class="align-items-center">
         <ul class="list-group row justify-content-center align-items-center" id="myList">
-            <li class="list-group-item list-group-item-action" *ngFor="let item of instituicoesFiltradas" (click)="detalheInstituicao(item.id)">{{item.nome}}</li>
+            <li class="list-group-item list-group-item-action" *ngFor="let item of instituicoesFiltradas" (click)="detalheInstituicao(item.id)">{{item.nome}} - Campus: {{item.campus}}</li>
         </ul>
     </div>
 

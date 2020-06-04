@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CadastroDTO } from 'src/app/dto/cadastroDTO';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -8,15 +9,19 @@ import { CadastroDTO } from 'src/app/dto/cadastroDTO';
 })
 export class CadastroComponent implements OnInit {
 
-  cadastro: CadastroDTO = new CadastroDTO();
+  public cadastro: CadastroDTO;
 
-  constructor() { }
+  constructor(
+    private usuarioService: UsuarioService) { 
+      this.cadastro = new CadastroDTO();
+    }
 
   ngOnInit(): void {
   }
 
   submitCadastro() {
     console.log(this.cadastro);
+    this.usuarioService.CadastrarUsuario(this.cadastro).subscribe(res => console.log(res));
   }
 
 }
