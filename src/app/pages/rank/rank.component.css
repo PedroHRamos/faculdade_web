@@ -13,3 +13,10 @@
     color: #fff;
     cursor: pointer;
 }
+
+thead>tr>th:hover {
+  cursor: pointer;
+  background-color: gray;
+  color: white;
+
+}

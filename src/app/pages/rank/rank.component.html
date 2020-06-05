@@ -7,18 +7,18 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Rank</th>
-                        <th scope="col">Avaliação geral média</th>
-                        <th (click)="ordernarNome()" scope="col">Nome</th>
-                        <th (click)="ordernarProfessor()" scope="col">Professores</th>
-                        <th scope="col">Infraestrutura</th>
-                        <th scope="col">Cordenação</th>
+                        <th id="rank" (click)="ordernarRankStart()" scope="col">Rank</th>
+                        <th id="media" (click)="ordernarMediaStart()" scope="col">Avaliação geral média</th>
+                        <th id="nome" (click)="ordernarNomeStart()" scope="col">Nome</th>
+                        <th id="professores" (click)="ordernarProfesssorStart()" scope="col">Professores</th>
+                        <th id="infraestrutura" (click)="ordernarInfraestruturaStart()" scope="col">Infraestrutura</th>
+                        <th id="cordenacao" (click)="ordernarCordenacaoStart()" scope="col">Cordenação</th>
                     </tr>
                 </thead>
                 <tbody *ngFor="let instituicao of instiuicoes">
                     <tr class="hover-link" (click)="detalheInstituicao(instituicao.id)">
                         <td scope="row d-none d-md-block" class="noBorderBottom">8</td>
-                        <td><label>2</label><span class="badge badge-pill badge-danger">Ruim</span></td>
+                        <td><span class="badge badge-pill badge-danger">Ruim</span></td>
                         <td>{{ instituicao.nome }}</td>
                         <td>4</td>
                         <td>1</td>
