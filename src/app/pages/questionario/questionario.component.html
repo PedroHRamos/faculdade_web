@@ -11,29 +11,11 @@
     <div class="col-md-4">
         <div class="card p-3 bg-primary">
           <form #dadosEstrela="ngForm">
-            <div class="form-group">
-                <p class="branco mb-2"><label for="exampleFormControlInput1">Como voce avalia a estrutura?</label></p>
-                <app-estrelas-brancas (estrelaValor)="estrutura = $event" id="questionarioEstrutura" name="questionarioEstrutura"></app-estrelas-brancas>
-            </div>
-            <div class="form-group">
-                <p class="branco mb-2"><label for="exampleFormControlInput1">Como voce avalia os professores?</label></p>
-                <app-estrelas-brancas (estrelaValor)="professores = $event" id="questionarioProfessores" name="questionarioProfessores"></app-estrelas-brancas>
-            </div>
-            <div class="form-group">
-                <p class="branco mb-2"><label for="exampleFormControlInput1">Como voce avalia o financeiro?</label></p>
-                <app-estrelas-brancas (estrelaValor)="financeiro = $event" id="questionarioFinanceiro" name="questionarioFinanceiro"></app-estrelas-brancas>
-            </div>
-            <div class="form-group">
-                <p class="branco mb-2"><label for="exampleFormControlInput1">Como voce avalia o atendimento?</label></p>
-                <app-estrelas-brancas (estrelaValor)="atendimento = $event" id="questionarioAtendimento" name="questionarioAtendimento"></app-estrelas-brancas>
-            </div>
-            <div class="form-group">
-                <p class="branco mb-2"><label for="exampleFormControlInput1">Como voce avalia a coordenacao?</label></p>
-                <app-estrelas-brancas (estrelaValor)="coordenacao = $event" id="questionarioCoordenacao" name="questionarioCoordenacao"></app-estrelas-brancas>
-            </div>
-            <div class="form-group">
-                <p class="branco mb-2"><label for="exampleFormControlInput1">Como voce avalia o ambiente virtual?</label></p>
-                <app-estrelas-brancas (estrelaValor)="ambienteVirtual = $event" id="questionarioAmbienteVirtual" name="questionarioAmbienteVirtual"></app-estrelas-brancas>
+            <div *ngFor="let quesito of quesitos">
+                <div class="form-group">
+                    <p class="branco mb-2"><label for="exampleFormControlInput1">Como voce o quesito {{quesito.nome}}?</label></p>
+                    <app-estrelas-brancas (estrelaValor)="quesito.estrelas = $event" id="questionarioEstrutura" name="questionarioEstrutura"></app-estrelas-brancas>
+                </div>
             </div>
             <div class="form-group">
                 <p class="branco mb-2"><label for="exampleFormControlInput1">Deixe um comentario</label></p>

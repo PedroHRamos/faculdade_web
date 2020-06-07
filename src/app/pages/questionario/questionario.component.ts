@@ -3,6 +3,9 @@ import { QuestionarioDTO } from 'src/app/dto/questionarioDTO';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { AuthService } from '../login/auth.service';
 import { InstituicaoDTO } from 'src/app/dto/instituicaoDTO';
+import { QuesitoService } from 'src/app/services/quesito.service';
+import { AvaliacaoService } from 'src/app/services/avaliacao.service';
+import { QuesitoDTO } from 'src/app/dto/quesitoDTO';
 
 @Component({
   selector: 'app-questionario',
@@ -18,24 +21,28 @@ export class QuestionarioComponent implements OnInit {
   coordenacao: number;
   ambienteVirtual: number;
   instituicao: InstituicaoDTO;
+  quesitos: Array<QuesitoDTO>;
   questionario: QuestionarioDTO = new QuestionarioDTO();
 
-  constructor() { }
+  constructor(private quesitoService: QuesitoService,
+    private avaliacaoService: AvaliacaoService) { }
 
   ngOnInit(): void {
     this.instituicao = window.history.state.instituicao;
     this.estrutura = 0;
-    console.log(this.instituicao.id);
+    this.obterQuesitos();
+    
+  }
+
+  obterQuesitos() {
+    this.quesitoService.obterQuesitos().subscribe(res => {
+      this.quesitos = res;
+    });
   }
 
   submitQuestionario() {
-    console.log(this.estrutura);
-    console.log(this.professores);
-    console.log(this.financeiro);
-    console.log(this.atendimento);
-    console.log(this.coordenacao);
-    console.log(this.ambienteVirtual);
-    console.log(this.questionario);
+    console.log(this.quesitos);
+    this.avaliacaoService.cadastrarAvaliacoes(this.quesitos).subscribe(res => console.log(res));
     //chamar service da avaliação
   }
 
