@@ -1,13 +1,21 @@
-.backgroudcontato {
-    background-image: url('src\assets\img\fundocontato.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
+.bg1 {
+  background-image: linear-gradient(to bottom, #d3ff00, #dbff65, #e3fe99, #ecfbc7, #f6f8f2);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.corfundo {
-    background-color: rgba(255, 255, 255, 0.295);
-    height: 100%;
+.bg2 {
+  background-image: url(../../../assets/img/home/teste4.png);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  margin-top: 35px;
 }
 
 .btn-facebook {
@@ -102,12 +110,6 @@
     width: 50%;
 }
 
-#sticky-footer {
-    flex-shrink: none;
-    bottom: 0;
-    position: absolute;
-    width: 100%;
-}
 
 @media screen and (max-width: 600px) {
     .iconssocial {

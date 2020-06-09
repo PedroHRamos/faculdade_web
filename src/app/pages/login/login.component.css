@@ -1,5 +1,5 @@
 .background {
-  background: url(https://i.imgur.com/PhKxgQn.png);
+  background: url(../../../assets/img/fundologin.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: scroll;
@@ -26,10 +26,10 @@
 
 .card {
   padding: 20px;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  margin-top: -24px;
   width: 35rem;
   min-height: 93vh;
+  border: none;
+  background-image: linear-gradient(to bottom, #5e5e5e, #8a7582, #c38a8c, #e8ab80, #e3db7f);
 }
 
 .card-title {

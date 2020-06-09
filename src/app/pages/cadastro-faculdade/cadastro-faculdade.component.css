@@ -1,7 +1,21 @@
-.background {
-  background-color: #fdd400;
+.bg {
+  background-image: linear-gradient(to bottom, #0982f0, #1c84e5, #2d85d9, #3b86cc, #4986c0, #638fc1, #7898c3, #8ba1c4, #acb7d2, #cacee1, #e6e6f0, #ffffff);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg2 {
+  background-image: url(../../../assets/img/home/teste4.png);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .card {
   border-radius: 10px;
+  margin-bottom: 35px;
+  margin-top: 35px;
 }

@@ -1,24 +1,14 @@
-#itens {
-  margin-left: 10%;
-  margin-right: 10%;
+.navbar-brand > img {
+  width: 3rem;
+  height: 2rem;
 }
 
-.fa-glasses {
-  font-size: 1.5rem;
+#logoEscrito {
+  font-family: 'Bungee';
+  color: #343a40;
 }
 
-.fa-user-circle {
-  font-size: 2em;
-}
-
-.navbar.navbar-expand-lg.navbar-dark.bg-primary {
-  padding: 1px;
-}
-
-.nav-item.dropdown {
-  left: 100%;
-}
-
-.dropdown-menu {
-  min-width: 1rem;
+#navbarNav > ul > li:nth-child(5) {
+  position: absolute;
+  right: 0px;
 }

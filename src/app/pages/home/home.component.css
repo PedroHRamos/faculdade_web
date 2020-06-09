@@ -38,8 +38,23 @@ body, html {
   height: 100%;
 }
 
+.logomeio {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 7rem;
+}
+
 .bg {
-  background-image: url('../../../assets/img/background.jpg');
+  background-image: linear-gradient(to bottom, #1289f6, #00b2ee, #5ccfd3, #bbe4cf, #f6f8f2);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg2 {
+  background-image: url(../../../assets/img/home/teste4.png);
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -78,7 +93,7 @@ body, html {
 
 .list-group-item.list-group-item-action {
   background-color: white;
-  border-color: #007BFF;
+  border-color: #343a40;
   border-width: 3px;
   border-top: 0rem;
   width: 60%;
@@ -102,5 +117,24 @@ body, html {
 
 #titulo {
   font-family: 'Bungee';
-  color: rgb(14, 89, 175);
+  color: black;
+  text-shadow: 1px 2px 3px #666;
+}
+
+#descricao {
+  text-shadow: 1px 2px 3px #666;
+}
+
+.imageRight {
+  position: absolute;
+    bottom: 0;
+    right: 0;
+    right: 3%;
+}
+
+.imageleft {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40%;
 }

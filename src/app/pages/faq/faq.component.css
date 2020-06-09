@@ -1,8 +1,17 @@
-.backgroudcontato {
-  background-color: darkorange;
+.bg1 {
+  background-image: linear-gradient(to bottom, #00ff00, #88fe58, #bbfc8b, #defabd, #f6f8f2);
+  height: 100%;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.bg2 {
+  background-image: url(../../../assets/img/home/teste4.png);
   height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .imagemContato {
@@ -12,4 +21,12 @@
   width: 12rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.container {
+  margin-top: 35px;
+}
+
+.card {
+  border-radius: 10px;
 }

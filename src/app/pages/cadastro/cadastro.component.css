@@ -1,7 +1,24 @@
-.background {
-  background-color: #000000;
+.bg {
+  background-image: linear-gradient(to bottom, #edd773, #febc83, #f6aa9b, #d9a1ac, #b49cac, #aea2af, #aba8af, #acacac, #c0c0c0, #d5d5d5, #eaeaea, #ffffff);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg2 {
+  background-image: url(../../../assets/img/home/teste4.png);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .card {
   border-radius: 10px;
+}
+
+.container {
+  margin-top: 35px;
+  margin-bottom: 35px;
 }

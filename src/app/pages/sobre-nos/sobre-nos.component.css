@@ -1,15 +1,17 @@
-.backgroundsobre {
-
-    background-image: url('src\assets\img\fundosobre.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+.bg1 {
+  background-image: linear-gradient(to bottom, #00ff00, #88fe58, #bbfc8b, #defabd, #f6f8f2);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.fas.fa-glasses {
-    font-size: 100px;
-    color: #007bff;
-    padding: 20pt;
+.bg2 {
+  background-image: url(../../../assets/img/home/teste4.png);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .espaco {
@@ -18,16 +20,12 @@
 
 .container {
     text-align: center;
-}
-
-.card-title {
-    font-size: 35pt;
-    padding-top: 10pt;
-    padding-bottom: 10pt;
+    margin-top: 35px;
 }
 
 .card-text {
     font-size: 1rem;
+    text-align: justify;
 }
 
 .card-title:nth-child(5) {
@@ -40,6 +38,6 @@
 }
 
 .card {
-    border-radius: 17px;
+    border-radius: 10px;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }

@@ -20,3 +20,41 @@ thead>tr>th:hover {
   color: white;
 
 }
+
+.bg1 {
+  background-image: linear-gradient(to bottom, #f61212, #eb7b1e, #e0b05a, #e0d8a5, #f6f8f2);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg2 {
+  background-image: url(../../../assets/img/home/teste4.png);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  background-color: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-top: 35px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+thead {
+  background-color: #565a5e;
+}
+
+.table thead th {
+  border-top: none;
+}
+
+td {
+  margin-left: auto;
+  margin-right: auto;
+}
