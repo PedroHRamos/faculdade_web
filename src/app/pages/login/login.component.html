@@ -11,7 +11,7 @@
         <div class="form-group">
           <label for="emailLogin"><b>E-mail:</b></label>
           <input type="email" class="form-control" id="emailLogin" placeholder="meuemail@gmail.com" maxlength="50"
-          name="emailLogin" [(ngModel)]="usuario.email" required>
+          name="emailLogin" [(ngModel)]="login.email" required>
           <div class="invalid-feedback">
             Você precisa do seu e-mail para fazer login!
           </div>
@@ -22,7 +22,7 @@
         <div class="form-group">
           <label for="passwordLogin"><b>Senha:</b></label>
           <input type="password" class="form-control" id="passwordLogin" placeholder="" maxlength="50"
-          name="passwordLogin" [(ngModel)]="usuario.senha" required>
+          name="passwordLogin" [(ngModel)]="login.password" required>
           <div class="invalid-feedback">
             Sua senha está incorreta ou vazia!
           </div>

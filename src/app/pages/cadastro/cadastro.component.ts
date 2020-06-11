@@ -12,7 +12,7 @@ export class CadastroComponent implements OnInit {
   public cadastro: CadastroDTO;
 
   constructor(
-    private usuarioService: UsuarioService) { 
+    private usuarioService: UsuarioService) {
       this.cadastro = new CadastroDTO();
     }
 
@@ -21,7 +21,9 @@ export class CadastroComponent implements OnInit {
 
   submitCadastro() {
     console.log(this.cadastro);
-    this.usuarioService.CadastrarUsuario(this.cadastro).subscribe(res => console.log(res));
+    this.usuarioService.CadastrarUsuario(this.cadastro).subscribe(res => {
+      console.log(res);
+    });
   }
 
 }
