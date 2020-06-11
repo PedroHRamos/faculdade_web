@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContatoDTO } from 'src/app/dto/contatoDTO';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import { AuthService } from '../login/auth.service';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -13,7 +12,7 @@ export class ContatoComponent implements OnInit {
 
   contato: ContatoDTO = new ContatoDTO();
 
-  constructor(private usuarioService: UsuarioService, private authservice: AuthService) { }
+  constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
   }

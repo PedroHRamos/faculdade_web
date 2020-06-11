@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionarioDTO } from 'src/app/dto/questionarioDTO';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import { AuthService } from '../login/auth.service';
 import { InstituicaoDTO } from 'src/app/dto/instituicaoDTO';
 import { QuesitoService } from 'src/app/services/quesito.service';
 import { AvaliacaoService } from 'src/app/services/avaliacao.service';
@@ -24,14 +23,14 @@ export class QuestionarioComponent implements OnInit {
   quesitos: Array<QuesitoDTO>;
   questionario: QuestionarioDTO = new QuestionarioDTO();
 
-  constructor(private quesitoService: QuesitoService,
+  constructor(
+    private quesitoService: QuesitoService,
     private avaliacaoService: AvaliacaoService) { }
 
   ngOnInit(): void {
     this.instituicao = window.history.state.instituicao;
     this.estrutura = 0;
     this.obterQuesitos();
-    
   }
 
   obterQuesitos() {
@@ -43,7 +42,7 @@ export class QuestionarioComponent implements OnInit {
   submitQuestionario() {
     console.log(this.quesitos);
     this.avaliacaoService.cadastrarAvaliacoes(this.quesitos).subscribe(res => console.log(res));
-    //chamar service da avaliação
+    // chamar service da avaliação
   }
 
 }

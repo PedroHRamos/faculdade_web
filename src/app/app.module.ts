@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthService } from './pages/login/auth.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,7 @@ import { AuthService } from './pages/login/auth.service';
     ComponentsModule,
     HttpClientModule,
   ],
-  providers: [AuthService],
+  providers: [],
   schemas: [ NO_ERRORS_SCHEMA ],
   bootstrap: [AppComponent]
 })

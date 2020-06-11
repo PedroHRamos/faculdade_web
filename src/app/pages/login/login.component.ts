@@ -1,11 +1,7 @@
-import { AlunoDTO } from './../../dto/alunoDTO';
-import { AlunoService } from './../../services/aluno.service';
 import { Component, OnInit, Inject } from '@angular/core';
 import * as $ from 'jquery';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import { FormGroup } from '@angular/forms';
-import { AuthService } from './auth.service';
-import { UsuarioDTO } from 'src/app/dto/usuarioDTO';
+import { LoginDTO } from 'src/app/dto/loginDTO';
 
 @Component({
   selector: 'app-login',
@@ -14,16 +10,16 @@ import { UsuarioDTO } from 'src/app/dto/usuarioDTO';
 })
 export class LoginComponent implements OnInit {
 
-  usuario: UsuarioDTO = new UsuarioDTO();
+  login: LoginDTO = new LoginDTO();
 
-  constructor(private usuarioService: UsuarioService, private authservice: AuthService) {
+  constructor(private usuarioService: UsuarioService) {
   }
 
   ngOnInit(): void {
   }
 
   submitLogin() {
-    this.authservice.fazerLogin(this.usuario);
+    this.usuarioService.Login(this.login).subscribe(res => console.log(res));
   }
 
 }
