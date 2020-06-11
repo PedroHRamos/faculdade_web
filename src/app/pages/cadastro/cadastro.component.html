@@ -17,7 +17,7 @@
           <input type="email" class="form-control" id="email" placeholder="joaobatista@gmail.com" name="email" [(ngModel)]="cadastro.email">
         </div>
         <div class="form-group col-md-6">
-          <label for="username"><b>Ussername:</b></label>
+          <label for="username"><b>Username:</b></label>
           <input type="username" class="form-control" id="username" placeholder="" name="username" [(ngModel)]="cadastro.username">
         </div>
       </div>
@@ -142,6 +142,7 @@
       </div>
       <div class="form-group">
         <input type="submit" class="btn btn-primary" value="Entrar" (click)="submitCadastro()" />
+        <div *ngIf="existeMensagem"> {{mensagem}}  </div>
       </div>
     </form>
   </div>
