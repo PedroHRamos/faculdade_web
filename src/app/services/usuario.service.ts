@@ -1,11 +1,12 @@
+import { Observable } from 'rxjs/internal/Observable';
+import { UsuarioDTO } from './../dto/usuarioDTO';
 import { LoginDTO } from './../dto/loginDTO';
 import { AlunoDTO } from './../dto/alunoDTO';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { UsuarioDTO } from '../dto/usuarioDTO';
 import { formatDate } from '@angular/common';
 import * as jwt_decode from 'jwt-decode';
+import { map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +15,20 @@ export class UsuarioService {
 
   constructor(private http: HttpClient) { }
 
-  public userLoged = false;
+  // userLoged = false;
 
   Login(login: LoginDTO): Observable<any> {
+    // return this.http.post('http://localhost:52738/login/signin', login, {observe: 'response'})
+    //   .pipe(tap(data => {
+    //     if (data.status === 200) {
+    //       this.userLoged = true;
+    //     }
+    //   }));
     return this.http.post('http://localhost:52738/login/signin', login);
+  }
+
+  ObterDetalheUsuario(id: number): Observable<UsuarioDTO> {
+    return this.http.post<UsuarioDTO>('http://localhost:52738/login/user-details', parseInt(id.toString()));
   }
 
   CadastrarUsuario(form): Observable<any> {
@@ -38,6 +49,15 @@ export class UsuarioService {
   getAuthorizationToken() {
     const token = window.localStorage.getItem('token');
     return token;
+  }
+
+  getUserId(token: string): number {
+    const decoded: any = jwt_decode(token);
+
+    if (decoded.exp === undefined) {
+      return null;
+    }
+    return decoded.userid;
   }
 
   getTokenExpirationDate(token: string): Date {
@@ -67,7 +87,8 @@ export class UsuarioService {
 
   isUserLoggedIn() {
     const token = this.getAuthorizationToken();
-    if (!token || !this.userLoged) {
+    // if (!token || !this.userLoged) {
+    if (!token) {
       return false;
     } else if (this.isTokenExpired(token)) {
       return false;

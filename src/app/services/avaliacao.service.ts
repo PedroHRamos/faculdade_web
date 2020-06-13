@@ -14,22 +14,22 @@ export class AvaliacaoService {
 
   constructor(private http: HttpClient) { }
 
-  cadastrarAvaliacoes(avaliacoes: Array<any>){
+  cadastrarAvaliacoes(avaliacoes: Array<any>) {
 
-    for (var avaliacao of avaliacoes ) {
-      if(avaliacao.estrelas != 0 &&  avaliacao.estrelas != null){
+    for (const avaliacao of avaliacoes ) {
+      if (avaliacao.estrelas !== 0 &&  avaliacao.estrelas != null) {
         avaliacao.Id_usuario = 1;
-        avaliacao.Id_instituicao = 2; //Pegar instituicao aqui
+        avaliacao.Id_instituicao = 2; // Pegar instituicao aqui
         avaliacao.Id_quesito = avaliacao.id;
       }
     }
 
     return this.http.post<AvaliacaooDTO>('http://localhost:52738/avaliacao', avaliacoes);
-    
+
   }
 
-  retornaMediaAvaliacoes(idInstituicao: number): Observable<Array<AvaliacaoMediaDTO>>{
-    return this.http.get<Array<AvaliacaoMediaDTO>>('http://localhost:52738/avaliacao');
+  retornaMediaAvaliacoes(idInstituicao: number): Observable<Array<AvaliacaoMediaDTO>> {
+    return this.http.get<Array<AvaliacaoMediaDTO>>(`http://localhost:52738/avaliacao?id_instituicao=${idInstituicao}`);
   }
 
 }

@@ -22,15 +22,19 @@ export class LoginComponent implements OnInit {
   }
 
   submitLogin() {
-    this.usuarioService.Login(this.login).subscribe(res => {
-      if (res && res.access_token) {
-        window.localStorage.setItem('token', res.data);
-        this.router.navigate(['']);
-        this.usuarioService.userLoged = true;
-      } else {
-        console.log('Usuário ou senha inválidos');
-      }
-    });
+    if (this.usuarioService.isUserLoggedIn()) {
+      console.log('Usuario já está logado');
+    } else {
+      window.localStorage.removeItem('token');
+      this.usuarioService.Login(this.login).subscribe(res => {
+        if (res && res.data) {
+          window.localStorage.setItem('token', res.data);
+          this.router.navigate(['']);
+        } else {
+          console.log('Usuário ou senha inválidos');
+        }
+      });
+    }
   }
 
 }

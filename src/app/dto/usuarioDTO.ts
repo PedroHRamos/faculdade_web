@@ -14,5 +14,4 @@ export class UsuarioDTO {
     senha: string;
     confirmacaoSenha: string;
     token: string;
-
 }
