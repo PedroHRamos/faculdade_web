@@ -4,20 +4,20 @@
     teste
 </div> -->
 <div class="container"> 
-<div class="branco">
-  <div class="row mt-3">
-      <div class="col-md-3 d-none d-md-block">
-          <h2><img class="image" src="../../../assets/img/UnaBarreiro.jpg" alt=""></h2>
+  <div class="branco">
+    <div class="row mt-3">
+        <div class="col-md-3 d-none d-md-block">
+            <h2><img class="image" src="../../../assets/img/UnaBarreiro.jpg" alt=""></h2>
+        </div>
+        <div class="col-md-7 col-12">
+          <h2 class="">{{instituicao.nome}} - Campus {{instituicao.campus}}</h2>
+          <h5 class="flex mt-1">Avaliação Geral: <app-estrelas class="estrelas ml-2" (estrelaValor)=mediaGeral></app-estrelas> {{mediaGeral}} </h5>
       </div>
-      <div class="col-md-7 col-12">
-        <h2 class="">{{instituicao.nome}} - Campus {{instituicao.campus}}</h2>
-        <h5 class="flex mt-1">Avaliação Geral: <app-estrelas class="estrelas ml-2"></app-estrelas> 4.5 </h5>
-    </div>
-    <div class="col-md-2 text-right col-4">
-        <button class="btn btn-primary" (click)="avaliarInstituicao(instituicao.id)">Avaliar</button>
-    </div>
-  </div> 
-</div>
+      <div class="col-md-2 text-right col-4">
+          <button class="btn btn-primary" (click)="avaliarInstituicao(instituicao.id)">Avaliar</button>
+      </div>
+    </div> 
+  </div>
 
 <div class="mt-4 d-none d-md-block">
   <div class="row">
@@ -26,16 +26,12 @@
       <i class="fas fa-graduation-cap"></i>
     </div>
 
-    <div class="col-4 pl-1">
-      <pre class="flex"><app-estrelas class="ml-3"></app-estrelas>  Estrutura</pre>
-      <pre class="flex"><app-estrelas class="ml-3"></app-estrelas>  Professores</pre>
-      <pre class="flex"><app-estrelas class="ml-3"></app-estrelas>  Financeiro</pre>
+    <div class="col-4 pl-1" *ngFor="let quesito of quesitosEsquerda">
+      <pre class="flex"><app-estrelas class="ml-3" (estrelaValor)=quesito.media></app-estrelas>  {{quesito.nome}}</pre>
     </div>
 
-    <div class="col-5 pl-1">
-      <pre class="flex"><app-estrelas class="ml-3"></app-estrelas>  Atendimento</pre>
-      <pre class="flex"><app-estrelas class="ml-3"></app-estrelas>  Coordenação</pre>
-      <pre class="flex"><app-estrelas class="ml-3"></app-estrelas>  Ambiente virtual</pre>
+    <div class="col-5 pl-1" *ngFor="let quesito of quesitosDireita">
+      <pre class="flex"><app-estrelas class="ml-3" (estrelaValor)=quesito.media></app-estrelas>  {{quesito.nome}}</pre>
     </div>
   </div>
   </div>

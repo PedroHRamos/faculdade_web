@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { AvaliacaooDTO } from '../dto/avaliacaoDTO';
 import { isNull } from 'util';
+import { AvaliacaoMediaDTO } from '../dto/avaliacaoMediaDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,10 @@ export class AvaliacaoService {
 
     return this.http.post<AvaliacaooDTO>('http://localhost:52738/avaliacao', avaliacoes);
     
+  }
+
+  retornaMediaAvaliacoes(idInstituicao: number): Observable<Array<AvaliacaoMediaDTO>>{
+    return this.http.get<Array<AvaliacaoMediaDTO>>('http://localhost:52738/avaliacao');
   }
 
 }
