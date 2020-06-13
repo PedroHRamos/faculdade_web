@@ -1,3 +1,4 @@
+import { AuthGuard } from './../shared/auth.guard';
 import { TesteComponent } from './teste/teste.component';
 import { DetalheFaculComponent } from './detalhe-facul/detalhe-facul.component';
 import { RankComponent } from './rank/rank.component';
@@ -23,7 +24,7 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'rank', component: RankComponent },
     { path: 'detalhe-faculdade', component: DetalheFaculComponent },
-    { path: 'contato', component: ContatoComponent },
+    { path: 'contato', component: ContatoComponent, canActivate: [AuthGuard] },
     { path: 'sobre-nos', component: SobreNosComponent},
     { path: 'questionario', component: QuestionarioComponent },
     { path: 'detalhe-faculdade', component: DetalheFaculComponent },

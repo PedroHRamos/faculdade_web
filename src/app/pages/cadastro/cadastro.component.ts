@@ -25,7 +25,6 @@ export class CadastroComponent implements OnInit {
     }
 
   ngOnInit(): void {
-
     this.cadastro = this.cadastroBuilder.group({
         nome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(35)]],
         email: [null, Validators.email],
@@ -37,18 +36,15 @@ export class CadastroComponent implements OnInit {
         estado: [null, Validators.required],
         cpf: [null, [Validators.required, Validators.minLength(11)]]
     });
-
-
-
   }
 
   submitCadastro() {
     console.log(this.cadastro);
-    if(this.cadastro.senha == this.cadastro.confirmarsenha) {
+    if (this.cadastro.senha === this.cadastro.confirmarsenha) {
        this.usuarioService.CadastrarUsuario(this.cadastro).subscribe(res => console.log(res));
        this.route.navigate(['/rank']);
-    }else{
-      this.mensagem = "As senhas não conferem";
+    } else {
+      this.mensagem = 'As senhas não conferem';
       this.existeMensagem = true;
     }
   }

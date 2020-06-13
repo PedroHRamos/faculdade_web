@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { UsuarioDTO } from '../dto/usuarioDTO';
 import { formatDate } from '@angular/common';
+import * as jwt_decode from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +14,10 @@ export class UsuarioService {
 
   constructor(private http: HttpClient) { }
 
+  public userLoged = false;
+
   Login(login: LoginDTO): Observable<any> {
-    return this.http.post('http://localhost:52738/login', 'grant_type=password&username=' +
-    login.email + '&password=' + login.password);
+    return this.http.post('http://localhost:52738/login/signin', login);
   }
 
   CadastrarUsuario(form): Observable<any> {
@@ -31,6 +33,47 @@ export class UsuarioService {
     usuario.senha = form.senha;
 
     return this.http.post<UsuarioDTO>('http://localhost:52738/usuario', usuario);
+  }
+
+  getAuthorizationToken() {
+    const token = window.localStorage.getItem('token');
+    return token;
+  }
+
+  getTokenExpirationDate(token: string): Date {
+    const decoded: any = jwt_decode(token);
+
+    if (decoded.exp === undefined) {
+      return null;
+    }
+
+    const date = new Date(0);
+    date.setUTCSeconds(decoded.exp);
+    return date;
+  }
+
+  isTokenExpired(token?: string): boolean {
+    if (!token) {
+      return true;
+    }
+
+    const date = this.getTokenExpirationDate(token);
+    if (date === undefined) {
+      return false;
+    }
+
+    return !(date.valueOf() > new Date().valueOf());
+  }
+
+  isUserLoggedIn() {
+    const token = this.getAuthorizationToken();
+    if (!token || !this.userLoged) {
+      return false;
+    } else if (this.isTokenExpired(token)) {
+      return false;
+    }
+
+    return true;
   }
 
 }
