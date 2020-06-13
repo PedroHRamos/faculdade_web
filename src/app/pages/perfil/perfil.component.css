@@ -1,0 +1,82 @@
+.bg1 {
+  background-image: linear-gradient(to right top, #1470fd, #00a4ff, #00c6ed, #00de91, #8be924);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  background-color: white;
+  margin-top: 35px;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+#imagem {
+  font-size: 6rem;
+  background-color: rgb(42, 59, 105);
+  padding: 30px;
+  border-radius: 50%;
+  color: white;
+}
+
+.cabecalho {
+  background-color: rgb(46, 69, 131);
+  padding: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+#nome {
+  font-size: 3rem;
+  color: lightslategray;
+}
+
+#avaliacoesRealizadas {
+  color: white;
+}
+
+#instituicao {
+  color: white;
+}
+
+#minhasAvali {
+  color: white;
+}
+
+#myTab {
+  background-color: rgb(46, 69, 131);
+}
+
+.nav-item {
+  padding-left: 5px;
+}
+
+.nav-tabs {
+  border-color: rgb(38, 56, 105);
+  border-width: 5px;
+}
+
+.nav-link {
+  color: white;
+}
+
+.tab-pane {
+  background-color: rgb(46, 69, 131);
+  padding: 13px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+#sair {
+  position: absolute;
+  right: 25px;
+  top: 70px;
+}
+
+@media screen and (max-width: 600px) {
+  #imagem {
+    display: none;
+  }
+}

@@ -4,32 +4,15 @@
     <div class="container">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title"><b>Dúvidas? Entre em contato conosco.</b></h5>
+          <h5 class="card-title"><b>Dúvidas? Entre em contato com a gente!</b></h5>
           <br>
-          <p class="card-text">Você pode entrar em contato com a equipe <b>GLASSES</b> por meio do formulário abaixo:
+          <p class="card-text">Você pode entrar em contato com a equipe <b>GLASSES</b> por meio de nosso e-mail <b>glassesavaliacoes@gmail.com</b>
           </p>
-          <form #dadosContato="ngForm">
-            <div class="form-group">
-              <label for="nomeContato"><b>Nome completo:</b></label>
-              <input type="text" class="form-control" id="nomeContato" name="nomeContato" maxlength="32" placeholder="Marcos Daniel Gonzaga"
-                [(ngModel)]="contato.nome"/>
-            </div>
-            <div class="form-group">
-              <label for="emailContato"><b>E-mail:</b></label>
-              <input type="email" class="form-control" id="emailContato" name="emailContato" maxlength="32" placeholder="marcosdaniel42@gmail.com"
-                [(ngModel)]="contato.email"/>
-            </div>
-            <div class="form-group">
-              <label for="mensagemContato"><b>Mensagem:</b></label>
-              <textarea class="form-control" id="mensagemContato" name="mensagemContato" rows="3" maxlength="300"
-                placeholder="O motivo do meu contato é..." [(ngModel)]="contato.mensagem"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" (click)="submitContato()">Enviar</button>
-          </form>
+          <i id="envelope" class="fas fa-envelope-open-text"></i>
           <br>
-          <p class="psocial">Ou entrar em uma de nossas redes sociais:</p>
+          <p class="psocial"><b>Ou por meio de uma das nossas redes sociais:</b></p>
           <div class="iconssocial">
-            <a class="shadow btn btn-social-icon btn-facebook">
+            <a  class="shadow btn btn-social-icon btn-facebook">
               <span class="fa fa-facebook"></span>
             </a>
             <a class="shadow btn btn-social-icon btn-twitter">

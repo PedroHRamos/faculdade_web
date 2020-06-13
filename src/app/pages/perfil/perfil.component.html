@@ -1,0 +1,90 @@
+<div class="bg1">
+  <app-navbar></app-navbar>
+  <div class="container">
+    <a id="sair" type="button" class="btn btn-primary" href="/home">Sair / logout</a>
+    <div class="cabecalho">
+      <div class="d-flex bd-highlight">
+        <div class="p-2 flex-shrink-1 bd-highlight">
+          <i id="imagem" class="fas fa-user-graduate"></i>
+        </div>
+        <div class="p-2 w-100 bd-highlight">
+          <span id="nome"><b> Lucas Leonardo Ruan Brito</b></span>
+          <h6 id="avaliacoesRealizadas"><b>Avaliações realizadas: </b><span>1</span></h6>
+          <h6 id="instituicao"><b>Matriculado em: </b> <span>Centro Universitario Una</span></h6>
+        </div>
+      </div>
+    </div>
+    <div class="conteudo">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="avaliacoes-tab" data-toggle="tab" href="#avaliacoes" role="tab"
+            aria-controls="avaliacoes" aria-selected="true">Avaliações</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="dados-tab" data-toggle="tab" href="#dados" role="tab" aria-controls="dados"
+            aria-selected="false">Meus dados</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="avaliacoes" role="tabpanel" aria-labelledby="home-tab">
+          <div class="avaliacoesConteudo">
+            <h6 id="minhasAvali"><b>Minhas ultimas avaliações:</b></h6>
+            <div class="row mt-2">
+              <div class="col-12">
+                <div class="card">
+
+                  <div class="row card-header m-1 p-1">
+                    <div class="col-md-1 d-none d-md-block">
+                      <i class="fa fa-user-circle display-4"></i>
+                    </div>
+                    <div class="col-md-8 col-12">
+                      <h3> Maria Josefina</h3>
+                      <pre><i class="fas fa-user-graduate"></i> Estudante de Sistemas de Informação</pre>
+                    </div>
+                    <div class="col-md-3 col-12">
+                      <pre
+                        class="flex text-right d-none d-md-block"><app-estrelas class="ml-3"></app-estrelas>  Geral</pre>
+                    </div>
+                  </div>
+
+                  <div class="card-body">
+                    <h5 class="card-title">Melhoria para atendimento aos estudantes </h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                      proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="dados" role="tabpanel" aria-labelledby="profile-tab">
+          <div class="dadosConteudo">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex bd-highlight">
+                  <div class="p-2 w-50 bd-highlight">
+                    <h6><b>Nome: </b> <span>Lucas Leonardo Ruan Brito</span></h6>
+                    <h6><b>E-mail: </b> <span>lucasleonardo@gmail.com</span></h6>
+                    <h6><b>Username: </b> <span>lucasleo</span></h6>
+                    <h6><b>Data de nascimento: </b> <span>20/09/1995</span></h6>
+                  </div>
+                  <div class="p-2 bd-highlight">
+                    <h6><b>Cidade: </b> <span>Belo Horizonte</span></h6>
+                    <h6><b>Estado: </b> <span>MG</span></h6>
+                    <h6><b>Cpf: </b> <span id="cpf" (click)="exibirCPF()"><button type="button"
+                          class="btn btn-warning">Exibir</button></span></h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
