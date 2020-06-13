@@ -18,6 +18,7 @@ import { FaqComponent } from './faq/faq.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { AjudaComponent } from './ajuda/ajuda.component';
 import { DashBoardComponent } from './dash-board/dash-board.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { DashBoardComponent } from './dash-board/dash-board.component';
     CadastroComponent,
     AjudaComponent,
     DashBoardComponent,
-    TesteComponent
+    TesteComponent,
+    PerfilComponent
   ],
   imports: [
     CommonModule,

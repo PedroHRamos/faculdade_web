@@ -18,6 +18,14 @@
   margin-top: 35px;
 }
 
+#envelope {
+  font-size: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
 .btn-facebook {
     color: #fff;
     background-color: #3b5998;
