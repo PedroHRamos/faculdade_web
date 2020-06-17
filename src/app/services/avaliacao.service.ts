@@ -28,7 +28,7 @@ export class AvaliacaoService {
 
   }
 
-  retornaMediaAvaliacoes(idInstituicao: number): Observable<Array<AvaliacaoMediaDTO>> {
+  retornaMediaAvaliacoes(idInstituicao: number): Observable<any> {
     return this.http.get<Array<AvaliacaoMediaDTO>>(`http://localhost:52738/avaliacao?id_instituicao=${idInstituicao}`);
   }
 

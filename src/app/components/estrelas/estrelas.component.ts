@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, Input } from '@angular/core';
+import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-estrelas',
@@ -8,18 +9,26 @@ import { Component, OnInit } from '@angular/core';
 export class EstrelasComponent implements OnInit {
 
   estrelas: string[];
+  temValor: boolean;
+
+  @Output() estrelaValorOutput = new EventEmitter();
+  @Input() estrelaValorInput: number;
 
   public avaliar(estrela: number) {
 
-    for (let i = 0; i < estrela; i++) {
-      this.estrelas[i] = 'fas fa-star';
+    if(!this.temValor){
+
+      for (let i = 0; i < estrela; i++) {
+        this.estrelas[i] = 'fas fa-star';
+      }
+
+      if (estrela < 5 ) {
+      for (let i = estrela; i < 5; i++) {
+        this.estrelas[i] = 'far fa-star';
+      }
     }
 
-    if (estrela < 5 ) {
-    for (let i = estrela; i < 5; i++) {
-      this.estrelas[i] = 'far fa-star';
     }
-  }
 
   }
 
@@ -36,6 +45,13 @@ export class EstrelasComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.temValor = false;
+    if(this.estrelaValorInput != null || this.estrelaValorInput != undefined){
+      this.avaliar(this.estrelaValorInput);
+      this.temValor = true;
+    }
+    console.log('temValor',this.temValor);
+
   }
 
 }

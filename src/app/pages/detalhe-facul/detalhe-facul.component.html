@@ -11,7 +11,8 @@
         </div>
         <div class="col-md-7 col-12">
           <h2 class="">{{instituicao.nome}} - Campus {{instituicao.campus}}</h2>
-          <h5 class="flex mt-1">Avaliação Geral: <app-estrelas class="estrelas ml-2" (estrelaValor)=mediaGeral></app-estrelas> {{mediaGeral}} </h5>
+          <pre class="flex"><app-estrelas class="ml-3" [estrelaValorInput]="retornarMedia()"></app-estrelas>  {{mediaGeral}}</pre>
+          <!-- <h5 class="flex mt-1">Avaliação Geral: <app-estrelas class="estrelas ml-2" [estrelaValorInput]="mediaGeral"></app-estrelas> {{mediaGeral}} </h5> -->
       </div>
       <div class="col-md-2 text-right col-4">
           <button class="btn btn-primary" (click)="avaliarInstituicao(instituicao.id)">Avaliar</button>
@@ -26,12 +27,12 @@
       <i class="fas fa-graduation-cap"></i>
     </div>
 
-    <div class="col-4 pl-1" *ngFor="let quesito of quesitosEsquerda">
-      <pre class="flex"><app-estrelas class="ml-3" (estrelaValor)=quesito.media></app-estrelas>  {{quesito.nome}}</pre>
+    <div class="col-4 pl-1">
+      <pre class="flex" *ngFor="let quesito of quesitosEsquerda"><app-estrelas class="ml-3" [estrelaValorInput]="quesito.media"></app-estrelas>  {{quesito.nome}} - {{quesito.media}}</pre>
     </div>
 
-    <div class="col-5 pl-1" *ngFor="let quesito of quesitosDireita">
-      <pre class="flex"><app-estrelas class="ml-3" (estrelaValor)=quesito.media></app-estrelas>  {{quesito.nome}}</pre>
+    <div class="col-5 pl-1">
+      <pre class="flex" *ngFor="let quesito of quesitosDireita"><app-estrelas class="ml-3" [estrelaValorInput]="quesito.media"></app-estrelas>  {{quesito.nome}} - {{quesito.media}}</pre>
     </div>
   </div>
   </div>
@@ -62,7 +63,7 @@
                         <pre><i class="fas fa-user-graduate"></i> Estudante de Sistemas de Informação</pre>
                     </div>
                     <div class="col-md-3 col-12">
-                      <pre class="flex text-right d-none d-md-block"><app-estrelas class="ml-3"></app-estrelas>  Geral</pre>
+                      <!-- <pre class="flex text-right d-none d-md-block"><app-estrelas class="ml-3"></app-estrelas>  Geral</pre> -->
                   </div>
                   </div>
 
