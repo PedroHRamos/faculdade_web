@@ -74,12 +74,6 @@ export class DetalheFaculComponent implements OnInit {
   }
 
   retornarMedia() {
-    if (this.controle === 0) {
-      if (this.mediaGeral == null || this.mediaGeral === undefined) {
-        this.obterMediaAvaliacoes();
-      }
-    }
-    this.controle = 1;
     return this.mediaGeral;
   }
 }
