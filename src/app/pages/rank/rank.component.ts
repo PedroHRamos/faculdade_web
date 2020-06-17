@@ -2,6 +2,11 @@ import { InstituicaoService } from './../../services/instituicao.service';
 import { Component, OnInit } from '@angular/core';
 import { InstituicaoDTO } from 'src/app/dto/instituicaoDTO';
 import { Router } from '@angular/router';
+import { AvaliacaoMediaDTO } from 'src/app/dto/avaliacaoMediaDTO';
+import { ItemRankDTO } from 'src/app/dto/itemRankDTO';
+import { QuesitoService } from 'src/app/services/quesito.service';
+import { QuesitoDTO } from 'src/app/dto/quesitoDTO';
+import { AvaliacaoService } from 'src/app/services/avaliacao.service';
 
 @Component({
   selector: 'app-rank',
@@ -11,10 +16,14 @@ import { Router } from '@angular/router';
 export class RankComponent implements OnInit {
 
   constructor(
+    private quesitoService: QuesitoService,
     private instituicaoService: InstituicaoService,
+    private avaliacaoService: AvaliacaoService,
     private route: Router) { }
 
   instiuicoes: Array<InstituicaoDTO>;
+  quesitos: Array<QuesitoDTO>;
+  itens: Array<ItemRankDTO> = new Array<ItemRankDTO>();
 
   ngOnInit(): void {
     this.obterInstituicoes();
@@ -23,6 +32,47 @@ export class RankComponent implements OnInit {
   obterInstituicoes() {
     this.instituicaoService.obterInstituicoes().subscribe(res => {
       this.instiuicoes = res;
+      console.log('instituicoes',this.instiuicoes);
+      this.obterQuesitos();      
+    });
+  }
+
+  orquestraItensRank(){
+    for(const instituicao of this.instiuicoes){
+      let avaliacaoMedia: Array<AvaliacaoMediaDTO> = new Array<AvaliacaoMediaDTO>();
+      let item: ItemRankDTO = new ItemRankDTO();
+      this.avaliacaoService.retornaMediaAvaliacoes(instituicao.id).subscribe(res => {
+        avaliacaoMedia = res;
+      });
+      item.instituicao = instituicao;
+      item.avaliacoes = avaliacaoMedia;
+      console.log('avalMed',item.avaliacoes)
+      this.obterMediaGeral(item);
+    }
+    console.log('itens',this.itens);
+  }
+
+  obterMediaGeral(item: ItemRankDTO) {
+    let soma: number;
+    soma = 0;
+    let mediaGeral = 0;
+    for (const avaliacao of item.avaliacoes) {
+      soma = soma + avaliacao.media;
+    }
+    mediaGeral += soma / item.avaliacoes.length;
+    console.log(mediaGeral);
+    item.mediaGeral = mediaGeral;
+    this.itens.push(item);
+    console.log('item',item);
+  }
+
+
+  
+
+  obterQuesitos() {
+    this.quesitoService.obterQuesitos().subscribe(res => {
+      this.quesitos = res;
+      this.orquestraItensRank();
     });
   }
 
