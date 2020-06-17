@@ -7,6 +7,8 @@ import { ItemRankDTO } from 'src/app/dto/itemRankDTO';
 import { QuesitoService } from 'src/app/services/quesito.service';
 import { QuesitoDTO } from 'src/app/dto/quesitoDTO';
 import { AvaliacaoService } from 'src/app/services/avaliacao.service';
+import { Subscription } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-rank',
@@ -23,56 +25,74 @@ export class RankComponent implements OnInit {
 
   instiuicoes: Array<InstituicaoDTO>;
   quesitos: Array<QuesitoDTO>;
-  itens: Array<ItemRankDTO> = new Array<ItemRankDTO>();
+  avaliacoes: Array<AvaliacaoMediaDTO>;
+  itens: Array<ItemRankDTO>;
+  item: ItemRankDTO;
+  private subscription: Subscription;
 
   ngOnInit(): void {
+    this.avaliacoes = new Array();
+    this.itens = new Array<ItemRankDTO>();
+    this.obterQuesitos();
     this.obterInstituicoes();
   }
 
   obterInstituicoes() {
-    this.instituicaoService.obterInstituicoes().subscribe(res => {
+    this.item = {instituicao: new InstituicaoDTO(), avaliacoes: new Array<AvaliacaoMediaDTO>(), mediaGeral: 0};
+    this.instituicaoService.obterInstituicoes().subscribe(async res => {
       this.instiuicoes = res;
-      console.log('instituicoes',this.instiuicoes);
-      this.obterQuesitos();      
+      this.instiuicoes.forEach((x, index) => {
+        // console.log(x, this.item);
+        this.item.instituicao = x;
+        this.avaliacaoService.retornaMediaAvaliacoes(x.id).subscribe(ava => {
+          // this.item.avaliacoes = ava;
+          // this.itens.push(this.item);
+          // console.log(this.itens);
+          this.avaliacoes[index] = ava;
+          console.log(this.avaliacoes);
+        });
+      });
     });
   }
+      // this.instiuicoes.forEach(async (x, index) => {
+      //   this.item.instituicao = x;
+      //   await this.obterAva(x.id).then(pen => {this.item.avaliacoes = pen; this.itens.push(this.item);});
+      //   console.log(index);
+      //   console.log(this.item.avaliacoes);
+      //   this.itens.push(this.item);
+      //   console.log(this.itens);
 
-  orquestraItensRank(){
-    for(const instituicao of this.instiuicoes){
-      let avaliacaoMedia: Array<AvaliacaoMediaDTO> = new Array<AvaliacaoMediaDTO>();
-      let item: ItemRankDTO = new ItemRankDTO();
-      this.avaliacaoService.retornaMediaAvaliacoes(instituicao.id).subscribe(res => {
-        avaliacaoMedia = res;
-      });
-      item.instituicao = instituicao;
-      item.avaliacoes = avaliacaoMedia;
-      console.log('avalMed',item.avaliacoes)
-      this.obterMediaGeral(item);
-    }
-    console.log('itens',this.itens);
+      // });
+      // for (const x of this.instiuicoes) {
+      //   this.item.instituicao = x;
+      //   this.item.avaliacoes = await this.avaliacaoService.retornaMediaAvaliacoesAsync(x.id);
+      //   console.log();
+
+      //   this.itens.push(this.item);
+      //   console.log(this.item.avaliacoes);
+      //   console.log(this.itens);
+        // this.subscription = this.avaliacaoService.retornaMediaAvaliacoes(x.id).subscribe(ava => {
+        //   this.item.avaliacoes = ava;
+        //   this.itens.push(this.item);
+        //   console.log(this.itens);
+        // });
+      // });
+
+  // async obterAva(id: number) {
+  //   return this.avaliacaoService.retornaMediaAvaliacoesAsync(id);
+  // }
+
+  // ngOnDestroy() {
+  //   this.subscription.unsubscribe();
+  // }
+
+  retornaAvaliacao(index: number) {
+    return this.avaliacoes[index];
   }
-
-  obterMediaGeral(item: ItemRankDTO) {
-    let soma: number;
-    soma = 0;
-    let mediaGeral = 0;
-    for (const avaliacao of item.avaliacoes) {
-      soma = soma + avaliacao.media;
-    }
-    mediaGeral += soma / item.avaliacoes.length;
-    console.log(mediaGeral);
-    item.mediaGeral = mediaGeral;
-    this.itens.push(item);
-    console.log('item',item);
-  }
-
-
-  
 
   obterQuesitos() {
     this.quesitoService.obterQuesitos().subscribe(res => {
       this.quesitos = res;
-      this.orquestraItensRank();
     });
   }
 
@@ -81,310 +101,5 @@ export class RankComponent implements OnInit {
       this.route.navigate(['/detalhe-faculdade'], { state: { instituicao: res } });
     });
   }
-
-  // Inicio Ordenação Nome
-  ordernarNomeStart() {
-    var valor = document.getElementById('nome').innerHTML;
-    if (valor === 'Nome') {
-      document.getElementById('nome').innerHTML = 'Nome ▲';
-      this.ordernarNome();
-    } else {
-      if (valor === 'Nome ▲') {
-        document.getElementById('nome').innerHTML = 'Nome ▼';
-        this.ordernarNome2();
-      } else {
-        document.getElementById('nome').innerHTML = 'Nome ▲';
-        this.ordernarNome();
-      }
-    }
-  }
-
-  ordernarNome() {
-    function compare(a, b) {
-      const bandA = a.nome.toUpperCase();
-      const bandB = b.nome.toUpperCase();
-
-      let comparison = 0;
-      if (bandA > bandB) {
-        comparison = 1;
-      } else if (bandA < bandB) {
-        comparison = -1;
-      }
-      return comparison;
-    }
-    console.log(this.instiuicoes.sort(compare));
-  }
-
-  ordernarNome2() {
-    function compare(a, b) {
-      const bandA = a.nome.toUpperCase();
-      const bandB = b.nome.toUpperCase();
-
-      let comparison = 0;
-      if (bandA > bandB) {
-        comparison = -1;
-      } else if (bandA < bandB) {
-        comparison = 1;
-      }
-      return comparison;
-    }
-    console.log(this.instiuicoes.sort(compare));
-  }
-
-  // Fim Ordenação Nome
-  // Inicio Ordenação Professor
-  ordernarProfesssorStart() {
-    var valor = document.getElementById('professores').innerHTML;
-    if (valor === 'Professores') {
-      document.getElementById('professores').innerHTML = 'Professores ▲';
-      this.ordernarProfessor();
-    } else {
-      if (valor === 'Professores ▲') {
-        document.getElementById('professores').innerHTML = 'Professores ▼';
-        this.ordernarProfessor2();
-      } else {
-        document.getElementById('professores').innerHTML = 'Professores ▲';
-        this.ordernarProfessor();
-      }
-    }
-  }
-
-  ordernarProfessor() {
-    function compare(a, b) {
-      const bandA = a.professor;
-      const bandB = b.professor;
-
-      let comparison = 0;
-      if (bandA > bandB) {
-        comparison = 1;
-      } else if (bandA < bandB) {
-        comparison = -1;
-      }
-      return comparison;
-    }
-    console.log(this.instiuicoes.sort(compare));
-  }
-
-  ordernarProfessor2() {
-    function compare(a, b) {
-      const bandA = a.professor;
-      const bandB = b.professor;
-
-      let comparison = 0;
-      if (bandA > bandB) {
-        comparison = -1;
-      } else if (bandA < bandB) {
-        comparison = 1;
-      }
-      return comparison;
-    }
-    console.log(this.instiuicoes.sort(compare));
-  }
-
-  // Fim Ordenação Professor
-  // Inicio Ordenação Rank
-
-  ordernarRankStart() {
-    var valor = document.getElementById('rank').innerHTML;
-    if (valor === 'Rank') {
-      document.getElementById('rank').innerHTML = 'Rank ▲';
-      this.ordernarRank();
-    } else {
-      if (valor === 'Rank ▲') {
-        document.getElementById('rank').innerHTML = 'Rank ▼';
-        this.ordernarRank2();
-      } else {
-        document.getElementById('rank').innerHTML = 'Rank ▲';
-        this.ordernarRank();
-      }
-    }
-  }
-
-  ordernarRank() {
-    function compare(a, b) {
-      const bandA = a.rank;
-      const bandB = b.rank;
-
-      let comparison = 0;
-      if (bandA > bandB) {
-        comparison = 1;
-      } else if (bandA < bandB) {
-        comparison = -1;
-      }
-      return comparison;
-    }
-    console.log(this.instiuicoes.sort(compare));
-  }
-
-  ordernarRank2() {
-    function compare(a, b) {
-      const bandA = a.rank;
-      const bandB = b.rank;
-
-      let comparison = 0;
-      if (bandA > bandB) {
-        comparison = -1;
-      } else if (bandA < bandB) {
-        comparison = 1;
-      }
-      return comparison;
-    }
-    console.log(this.instiuicoes.sort(compare));
-  }
-
-  // Fim Ordenação Rank
-  // Inicio Ordenação Media
-
-  ordernarMediaStart() {
-    var valor = document.getElementById('media').innerHTML;
-    if (valor === 'Avaliação geral média') {
-      document.getElementById('media').innerHTML = 'Avaliação geral média ▲';
-      this.ordernarMedia();
-    } else {
-      if (valor === 'Avaliação geral média ▲') {
-        document.getElementById('media').innerHTML = 'Avaliação geral média ▼';
-        this.ordernarMedia2();
-      } else {
-        document.getElementById('media').innerHTML = 'Avaliação geral média ▲';
-        this.ordernarMedia();
-      }
-    }
-  }
-
-  ordernarMedia() {
-    function compare(a, b) {
-      const bandA = a.media;
-      const bandB = b.media;
-
-      let comparison = 0;
-      if (bandA > bandB) {
-        comparison = 1;
-      } else if (bandA < bandB) {
-        comparison = -1;
-      }
-      return comparison;
-    }
-    console.log(this.instiuicoes.sort(compare));
-  }
-
-  ordernarMedia2() {
-    function compare(a, b) {
-      const bandA = a.media;
-      const bandB = b.media;
-
-      let comparison = 0;
-      if (bandA > bandB) {
-        comparison = -1;
-      } else if (bandA < bandB) {
-        comparison = 1;
-      }
-      return comparison;
-    }
-    console.log(this.instiuicoes.sort(compare));
-  }
-
-  // Fim Ordenação Media
-  // Inicio Ordenação Infraestrutura
-
-  ordernarInfraestruturaStart() {
-    var valor = document.getElementById('infraestrutura').innerHTML;
-    if (valor === 'Infraestrutura') {
-      document.getElementById('infraestrutura').innerHTML = 'Infraestrutura ▲';
-      this.ordernarInfraestrutura();
-    } else {
-      if (valor === 'Infraestrutura ▲') {
-        document.getElementById('infraestrutura').innerHTML = 'Infraestrutura ▼';
-        this.ordernarInfraestrutura2();
-      } else {
-        document.getElementById('infraestrutura').innerHTML = 'Infraestrutura ▲';
-        this.ordernarInfraestrutura();
-      }
-    }
-  }
-
-  ordernarInfraestrutura() {
-    function compare(a, b) {
-      const bandA = a.infraestrutura;
-      const bandB = b.infraestrutura;
-
-      let comparison = 0;
-      if (bandA > bandB) {
-        comparison = 1;
-      } else if (bandA < bandB) {
-        comparison = -1;
-      }
-      return comparison;
-    }
-    console.log(this.instiuicoes.sort(compare));
-  }
-
-  ordernarInfraestrutura2() {
-    function compare(a, b) {
-      const bandA = a.infraestrutura;
-      const bandB = b.infraestrutura;
-
-      let comparison = 0;
-      if (bandA > bandB) {
-        comparison = -1;
-      } else if (bandA < bandB) {
-        comparison = 1;
-      }
-      return comparison;
-    }
-    console.log(this.instiuicoes.sort(compare));
-  }
-
-  // Fim Ordenação Infraestrutura
-  // Inicio Ordenação Cordenação
-
-  ordernarCordenacaoStart() {
-    var valor = document.getElementById('cordenacao').innerHTML;
-    if (valor === 'Cordenação') {
-      document.getElementById('cordenacao').innerHTML = 'Cordenação ▲';
-      this.ordernarCordenacao();
-    } else {
-      if (valor === 'Cordenação ▲') {
-        document.getElementById('cordenacao').innerHTML = 'Cordenação ▼';
-        this.ordernarCordenacao2();
-      } else {
-        document.getElementById('cordenacao').innerHTML = 'Cordenação ▲';
-        this.ordernarCordenacao();
-      }
-    }
-  }
-
-  ordernarCordenacao() {
-    function compare(a, b) {
-      const bandA = a.cordenacao;
-      const bandB = b.cordenacao;
-
-      let comparison = 0;
-      if (bandA > bandB) {
-        comparison = 1;
-      } else if (bandA < bandB) {
-        comparison = -1;
-      }
-      return comparison;
-    }
-    console.log(this.instiuicoes.sort(compare));
-  }
-
-  ordernarCordenacao2() {
-    function compare(a, b) {
-      const bandA = a.cordenacao;
-      const bandB = b.cordenacao;
-
-      let comparison = 0;
-      if (bandA > bandB) {
-        comparison = -1;
-      } else if (bandA < bandB) {
-        comparison = 1;
-      }
-      return comparison;
-    }
-    console.log(this.instiuicoes.sort(compare));
-  }
-
-  // Fim Ordenação Cordenação
 
 }

@@ -9,16 +9,16 @@
             <table style="text-align:center;" class="table">
                 <thead class="shadow">
                     <tr>
-                        <th id="media" (click)="ordernarMediaStart()" scope="col">Avaliação geral média</th>
-                        <th id="nome" (click)="ordernarNomeStart()" scope="col">Nome</th>
-                        <th id="professores" (click)="ordernarProfesssorStart()" scope="col" *ngFor="let quesito of quesitos">{{quesito.nome}}</th>
+                        <th id="media" scope="col">Avaliação geral média</th>
+                        <th id="nome" scope="col">Nome</th>
+                        <th id="professores" scope="col" *ngFor="let quesito of quesitos">{{quesito.nome}}</th>
                     </tr>
                 </thead>
-                <tbody *ngFor="let item of itens">
-                    <tr class="hover-link" (click)="detalheInstituicao(item.instituicao.id)">
+                <tbody *ngFor="let item of instiuicoes; let i = index">
+                    <tr class="hover-link" (click)="detalheInstituicao(item.id)">
                         <td><span class="badge badge-pill badge-danger">Ruim</span></td>
-                        <td>{{ item.instituicao.nome }}</td>
-                        <td>4</td>
+                        <td>{{ item.nome }}</td>
+                        <td *ngFor="let avaliacao of retornaAvaliacao(i)">{{avaliacao.media}}</td>
                     </tr>
                 </tbody>
             </table>

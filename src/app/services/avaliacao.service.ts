@@ -32,4 +32,8 @@ export class AvaliacaoService {
     return this.http.get<Array<AvaliacaoMediaDTO>>(`http://localhost:52738/avaliacao?id_instituicao=${idInstituicao}`);
   }
 
+  retornaMediaAvaliacoesAsync(idInstituicao: number) {
+    return this.http.get<Array<AvaliacaoMediaDTO>>(`http://localhost:52738/avaliacao?id_instituicao=${idInstituicao}`).toPromise();
+  }
+
 }
