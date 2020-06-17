@@ -41,7 +41,7 @@ export class QuestionarioComponent implements OnInit {
 
   submitQuestionario() {
     console.log(this.quesitos);
-    this.avaliacaoService.cadastrarAvaliacoes(this.quesitos).subscribe(res => console.log(res));
+    this.avaliacaoService.cadastrarAvaliacoes(this.quesitos, this.instituicao.id).subscribe(res => console.log(res));
     // chamar service da avaliação
   }
 
