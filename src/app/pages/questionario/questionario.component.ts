@@ -5,6 +5,8 @@ import { InstituicaoDTO } from 'src/app/dto/instituicaoDTO';
 import { QuesitoService } from 'src/app/services/quesito.service';
 import { AvaliacaoService } from 'src/app/services/avaliacao.service';
 import { QuesitoDTO } from 'src/app/dto/quesitoDTO';
+import { DOCUMENT } from '@angular/common';
+
 
 @Component({
   selector: 'app-questionario',
@@ -43,6 +45,7 @@ export class QuestionarioComponent implements OnInit {
     console.log(this.quesitos);
     this.avaliacaoService.cadastrarAvaliacoes(this.quesitos, this.instituicao.id).subscribe(res => console.log(res));
     // chamar service da avaliação
+    location.href = 'http://localhost:4200/obrigado';
   }
 
 }

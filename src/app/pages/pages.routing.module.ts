@@ -16,6 +16,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { FaqComponent } from './faq/faq.component';
 import { DashBoardComponent } from './dash-board/dash-board.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { ObrigadoComponent } from './obrigado/obrigado.component';
 
 
 const routes: Routes = [
@@ -35,7 +36,8 @@ const routes: Routes = [
     { path: 'faq', component: FaqComponent},
     { path: 'dash-board', component: DashBoardComponent},
     { path: 'teste', component: TesteComponent},
-    { path: 'perfil', component: PerfilComponent}
+    { path: 'perfil', component: PerfilComponent},
+    { path: 'obrigado', component: ObrigadoComponent}
     // { path: 'menu', component: MenuComponent,
     //   children: [
     //     {
