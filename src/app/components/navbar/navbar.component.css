@@ -12,3 +12,10 @@
   position: absolute;
   right: 0px;
 }
+
+@media screen and (max-width: 600px) {
+  #navbarNav > ul > li:nth-child(5) {
+    position: relative;
+    right: auto;
+  }
+}
