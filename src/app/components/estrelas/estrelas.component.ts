@@ -14,19 +14,19 @@ export class EstrelasComponent implements OnInit {
   @Output() estrelaValorOutput = new EventEmitter();
   @Input() estrelaValorInput: number;
 
-  public avaliar(estrela: number) {
+  public avaliar(estrela?: number) {
 
-    if(!this.temValor){
+
 
       for (let i = 0; i < estrela; i++) {
         this.estrelas[i] = 'fas fa-star';
       }
 
       if (estrela < 5 ) {
-      for (let i = estrela; i < 5; i++) {
-        this.estrelas[i] = 'far fa-star';
-      }
-    }
+        for (let i = estrela; i < 5; i++) {
+          this.estrelas[i] = 'far fa-star';
+        }
+      
 
     }
 
@@ -45,13 +45,19 @@ export class EstrelasComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.temValor = false;
-    if(this.estrelaValorInput != null || this.estrelaValorInput != undefined){
-      this.avaliar(this.estrelaValorInput);
-      this.temValor = true;
-    }
-    console.log('temValor',this.temValor);
+    this.avaliar();
+    // this.temValor = false;
+    // if(this.estrelaValorInput != null || this.estrelaValorInput != undefined){
+    //   this.avaliar(this.estrelaValorInput);
+    //   this.temValor = true;
+    // }
+    // console.log('temValor',this.temValor);
 
+  }
+
+  ngOnChanges(): void {
+    this.avaliar(this.estrelaValorInput);
+    // changes.prop contains the old and the new value...
   }
 
 }
