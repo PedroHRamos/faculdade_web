@@ -41,8 +41,14 @@ export class CadastroComponent implements OnInit {
   submitCadastro() {
     console.log(this.cadastro);
     if (this.cadastro.senha === this.cadastro.confirmarsenha) {
-       this.usuarioService.CadastrarUsuario(this.cadastro).subscribe(res => console.log(res));
-       this.route.navigate(['/rank']);
+       this.usuarioService.CadastrarUsuario(this.cadastro).subscribe(res => {
+        if (res && res.data) {
+          window.localStorage.setItem('token', res.data);
+        } else {
+          console.log('Usuário ou senha inválidos');
+        }
+        this.route.navigate(['/rank']);
+       });
     } else {
       this.mensagem = 'As senhas não conferem';
       this.existeMensagem = true;

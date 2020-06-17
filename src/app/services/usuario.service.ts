@@ -43,7 +43,7 @@ export class UsuarioService {
     usuario.email = form.email;
     usuario.senha = form.senha;
 
-    return this.http.post<UsuarioDTO>('http://localhost:52738/usuario', usuario);
+    return this.http.post<UsuarioDTO>('http://localhost:52738/login/create-account', usuario);
   }
 
   getAuthorizationToken() {
